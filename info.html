@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Useful Information · Forest Sea View Villas</title>
+<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --stone: #c4b49a; --earth: #8b7355; --bark: #5c4a32; --moss: #6b7c5a;
+    --sage: #9aaa8a; --cream: #f5f0e8; --parchment: #ede4d3; --deep: #2c2416;
+    --water: #2a8a96; --sky: #a8d8e0;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: 'Jost', sans-serif;
+    background-color: #e2dcc0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.015 0.7' numOctaves='4' seed='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0.15'/%3E%3CfeBlend in='SourceGraphic' mode='multiply'/%3E%3C/filter%3E%3Crect width='400' height='400' fill='%23e8d9c0' filter='url(%23noise)' opacity='1'/%3E%3Cline x1='0' y1='20' x2='400' y2='18' stroke='%23d4c4a5' stroke-width='1.5' opacity='0.5'/%3E%3Cline x1='0' y1='55' x2='400' y2='52' stroke='%23c8b896' stroke-width='0.8' opacity='0.4'/%3E%3Cline x1='0' y1='90' x2='400' y2='88' stroke='%23d4c4a5' stroke-width='1.2' opacity='0.45'/%3E%3Cline x1='0' y1='130' x2='400' y2='127' stroke='%23c0aa88' stroke-width='0.6' opacity='0.35'/%3E%3Cline x1='0' y1='165' x2='400' y2='163' stroke='%23d4c4a5' stroke-width='1.8' opacity='0.5'/%3E%3Cline x1='0' y1='205' x2='400' y2='202' stroke='%23c8b896' stroke-width='0.7' opacity='0.4'/%3E%3Cline x1='0' y1='240' x2='400' y2='238' stroke='%23d4c4a5' stroke-width='1.1' opacity='0.45'/%3E%3Cline x1='0' y1='275' x2='400' y2='273' stroke='%23c0aa88' stroke-width='0.9' opacity='0.38'/%3E%3Cline x1='0' y1='315' x2='400' y2='312' stroke='%23d4c4a5' stroke-width='1.4' opacity='0.5'/%3E%3Cline x1='0' y1='350' x2='400' y2='348' stroke='%23c8b896' stroke-width='0.7' opacity='0.4'/%3E%3Cline x1='0' y1='385' x2='400' y2='383' stroke='%23d4c4a5' stroke-width='1.0' opacity='0.45'/%3E%3C/svg%3E");
+    background-size: 400px 400px;
+    color: var(--deep);
+    overflow-x: hidden;
+    padding: 30px;
+  }
+  #frame { outline: 3px solid #4a8a7a; overflow: hidden; background: var(--cream); }
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.2rem 3rem;
+    background: rgba(44,36,22,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(42,138,150,0.35);
+  }
+  .nav-logo { font-family:'Yeseva One',serif; font-size:1.15rem; color:var(--stone); letter-spacing:0.08em; text-decoration:none; }
+  .nav-links { display:flex; gap:2.5rem; list-style:none; }
+  .nav-links a { font-family:'Jost',sans-serif; font-weight:300; font-size:0.82rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--parchment); text-decoration:none; transition:color 0.3s; }
+  .nav-links a:hover, .nav-links a.active { color:var(--stone); border-bottom: 1px solid var(--stone); padding-bottom:2px; }
+  footer { background:var(--deep); padding:3rem 8vw 2rem; color:var(--stone); }
+  .footer-bottom { display:flex; justify-content:space-between; align-items:center; font-size:0.8rem; color:rgba(196,180,154,0.5); padding-top:2rem; border-top:1px solid rgba(196,180,154,0.15); }
+  .footer-logo { font-family:'Yeseva One',serif; font-size:1.2rem; color:var(--cream); margin-bottom:0.5rem; }
+  .info-item { padding: 1.5rem 0; border-bottom: 1px solid var(--parchment); display:flex; flex-direction:column; gap:0.4rem; }
+  .info-item:last-child { border-bottom: none; }
+  .info-label { font-size:0.82rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--stone); }
+  .info-title { font-family:'Yeseva One',serif; font-size:1.1rem; color:var(--bark); }
+  .info-value { font-family:'Cormorant Garamond',serif; font-size:1.1rem; color:var(--earth); line-height:1.7; }
+  .info-placeholder { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1rem; color:var(--stone); opacity:0.7; }
+</style>
+</head>
+<body>
+<div id="frame">
+
+<nav>
+  <a href="index.html" class="nav-logo">Forest Sea View Villas</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="villas.html">Our Villas</a></li>
+    <li><a href="explore.html">Explore</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="rates.html">Rates</a></li>
+    <li><a href="contact.html">Book Now</a></li>
+    <li><a href="info.html" class="active">Useful Information</a></li>
+  </ul>
+</nav>
+
+<div style="padding:5rem 6vw; background:var(--parchment);">
+  <div style="text-align:center; margin-bottom:4rem;">
+    <span style="font-size:0.82rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--stone);display:block;margin-bottom:1rem;">On the Island</span>
+    <h2 style="font-family:'Yeseva One',serif; font-size:clamp(2rem,4vw,3rem); color:var(--bark); margin-bottom:1rem;">Useful Information</h2>
+    <div style="width:60px;height:1px;background:linear-gradient(90deg,var(--moss),var(--water));margin:1.5rem auto;"></div>
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:var(--earth);max-width:500px;margin:0 auto;">Everything you need to know for a smooth and wonderful stay.</p>
+  </div>
+
+  <div style="max-width:800px; margin:0 auto; background:var(--cream); padding:3rem;">
+
+    <div class="info-item">
+      <span class="info-label">Transport</span>
+      <span class="info-title">Taxi</span>
+      <span class="info-placeholder">— telephone number to be added —</span>
+    </div>
+
+    <div class="info-item">
+      <span class="info-label">Local Support</span>
+      <span class="info-title">Your Support Network on the Island</span>
+      <span class="info-placeholder">— contact details to be added —</span>
+    </div>
+
+    <div class="info-item">
+      <span class="info-label">Water Sports</span>
+      <span class="info-title">Diving Center</span>
+      <span class="info-placeholder">— details to be added —</span>
+    </div>
+
+    <div class="info-item">
+      <span class="info-label">Food &amp; Drink</span>
+      <span class="info-title">Book a Seat at a Nice Breakfast Buffet</span>
+      <span class="info-placeholder">— details to be added —</span>
+    </div>
+
+    <div class="info-item">
+      <span class="info-label">Leisure</span>
+      <span class="info-title">Book a Visit to the Swimming Pool</span>
+      <span class="info-placeholder">— details to be added —</span>
+    </div>
+
+    <div class="info-item">
+      <span class="info-label">Wellness</span>
+      <span class="info-title">Yoga Center</span>
+      <span class="info-placeholder">— details and schedule to be added —</span>
+    </div>
+
+    <div class="info-item">
+      <span class="info-label">Dining</span>
+      <span class="info-title">Recommended Restaurants on the Island</span>
+      <span class="info-placeholder">— our favourite spots to be added —</span>
+    </div>
+
+    <div class="info-item">
+      <span class="info-label">Hiking &amp; Trails</span>
+      <span class="info-title">Wikiloc — Trail Tracking App</span>
+      <div class="info-value">
+        Our recommended app for navigating Samothraki's trails — works offline too, essential for the Fengari summit.<br>
+        <a href="https://www.wikiloc.com/download" target="_blank" style="color:#4a7a52; font-family:'Jost',sans-serif; font-size:0.92rem; letter-spacing:0.1em;">↓ Download Wikiloc →</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">Forest Sea View Villas</div>
+  <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.95rem;">Two forest houses above the Aegean · Ano Kariotes, Samothraki</div>
+  <div class="footer-bottom">
+    <span>© 2025 Forest Sea View Villas. All rights reserved.</span>
+    <span>Ano Kariotes · Samothraki · Greece</span>
+  </div>
+</footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery · Forest Sea View Villas</title>
+<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --stone: #c4b49a; --earth: #8b7355; --bark: #5c4a32; --moss: #6b7c5a;
+    --sage: #9aaa8a; --cream: #f5f0e8; --parchment: #ede4d3; --deep: #2c2416;
+    --water: #2a8a96; --sky: #a8d8e0;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Jost', sans-serif;
+    background-color: #e2dcc0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.015 0.7' numOctaves='4' seed='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0.15'/%3E%3CfeBlend in='SourceGraphic' mode='multiply'/%3E%3C/filter%3E%3Crect width='400' height='400' fill='%23e8d9c0' filter='url(%23noise)' opacity='1'/%3E%3Cline x1='0' y1='20' x2='400' y2='18' stroke='%23d4c4a5' stroke-width='1.5' opacity='0.5'/%3E%3Cline x1='0' y1='55' x2='400' y2='52' stroke='%23c8b896' stroke-width='0.8' opacity='0.4'/%3E%3Cline x1='0' y1='90' x2='400' y2='88' stroke='%23d4c4a5' stroke-width='1.2' opacity='0.45'/%3E%3Cline x1='0' y1='130' x2='400' y2='127' stroke='%23c0aa88' stroke-width='0.6' opacity='0.35'/%3E%3Cline x1='0' y1='165' x2='400' y2='163' stroke='%23d4c4a5' stroke-width='1.8' opacity='0.5'/%3E%3Cline x1='0' y1='205' x2='400' y2='202' stroke='%23c8b896' stroke-width='0.7' opacity='0.4'/%3E%3Cline x1='0' y1='240' x2='400' y2='238' stroke='%23d4c4a5' stroke-width='1.1' opacity='0.45'/%3E%3Cline x1='0' y1='275' x2='400' y2='273' stroke='%23c0aa88' stroke-width='0.9' opacity='0.38'/%3E%3Cline x1='0' y1='315' x2='400' y2='312' stroke='%23d4c4a5' stroke-width='1.4' opacity='0.5'/%3E%3Cline x1='0' y1='350' x2='400' y2='348' stroke='%23c8b896' stroke-width='0.7' opacity='0.4'/%3E%3Cline x1='0' y1='385' x2='400' y2='383' stroke='%23d4c4a5' stroke-width='1.0' opacity='0.45'/%3E%3C/svg%3E");
+    background-size: 400px 400px;
+    color: var(--deep);
+    overflow-x: hidden;
+    padding: 30px;
+  }
+  #frame {
+    outline: 3px solid #4a8a7a;
+    overflow: hidden;
+    background: var(--cream);
+  }
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.2rem 3rem;
+    background: rgba(44,36,22,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(42,138,150,0.35);
+  }
+  .nav-logo { font-family:'Yeseva One', serif; font-size:1.15rem; color:var(--stone); letter-spacing:0.08em; text-decoration:none; }
+  .nav-links { display:flex; gap:2.5rem; list-style:none; }
+  .nav-links a { font-family:'Jost',sans-serif; font-weight:300; font-size:0.88rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--parchment); text-decoration:none; transition:color 0.3s; }
+  .nav-links a:hover, .nav-links a.active { color:var(--stone); border-bottom: 1px solid var(--stone); padding-bottom:2px; }
+  .section-label { font-size:0.88rem; letter-spacing:0.3em; text-transform:uppercase; color:var(--stone); margin-bottom:1.5rem; display:block; }
+  .section-header { text-align:center; margin-bottom:4rem; }
+  .section-header h2 { font-family:'Yeseva One', serif; font-size:clamp(2rem,4vw,3rem); color:var(--bark); margin-bottom:1rem; }
+  .section-header p { font-family:'Cormorant Garamond',serif; font-size:1.1rem; font-style:italic; color:var(--earth); max-width:500px; margin:0 auto; }
+  .divider { width:60px; height:1px; background:var(--stone); margin:1.5rem auto; }
+  .btn-primary { display:inline-block; padding:0.9rem 2.4rem; background:var(--bark); color:var(--cream); font-family:'Jost',sans-serif; font-weight:400; font-size:0.88rem; letter-spacing:0.2em; text-transform:uppercase; text-decoration:none; border:1px solid var(--bark); transition:all 0.35s; }
+  .btn-primary:hover { background:transparent; color:var(--bark); }
+  footer { background:var(--deep); padding:3rem 8vw 2rem; color:var(--stone); }
+  .footer-bottom { display:flex; justify-content:space-between; align-items:center; font-size:0.75rem; color:rgba(196,180,154,0.5); padding-top:2rem; border-top:1px solid rgba(196,180,154,0.15); }
+  .footer-logo { font-family:'Yeseva One', serif; font-size:1.2rem; color:var(--cream); margin-bottom:0.5rem; }
+  .footer-tagline { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:0.95rem; }
+  
+</style>
+</head>
+<body>
+<div id="frame">
+
+<nav>
+  <a href="index.html" class="nav-logo">Forest Sea View Villas</a>
+  <ul class="nav-links">
+    <li><a href="index.html" >Home</a></li>
+    <li><a href="villas.html" >Our Villas</a></li>
+    <li><a href="explore.html" >Explore</a></li>
+    <li><a href="gallery.html" class="active">Gallery</a></li>
+    <li><a href="rates.html" >Rates</a></li>
+    <li><a href="contact.html" >Book Now</a></li>
+  </ul>
+</nav>
+
+
+<div style="padding:5rem 6vw;background:var(--cream);">
+  <div class="section-header">
+    <span class="section-label">Gallery</span>
+    <h2>A Glimpse of Samothraki</h2>
+    <div class="divider"></div>
+    <p>Wild streams, stone terraces, ancient forests and the restless Aegean horizon.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;max-width:1200px;margin:0 auto;">
+    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/img_05.jpg')">
+      <img src="images/img_05.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/img_07.jpg')">
+      <img src="images/img_07.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/img_08.jpg')">
+      <img src="images/img_08.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/img_11.jpg')">
+      <img src="images/img_11.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/img_16.jpg')">
+      <img src="images/img_16.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/img_20.jpg')">
+      <img src="images/img_20.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/img_23.jpg')">
+      <img src="images/img_23.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/img_24.jpg')">
+      <img src="images/img_24.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/img_09.jpg')">
+      <img src="images/img_09.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/img_06.jpg')">
+      <img src="images/img_06.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/img_fengari.jpg')">
+      <img src="images/img_fengari.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/img_01.jpg')">
+      <img src="images/img_01.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/img_29.jpg')">
+      <img src="images/img_29.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/ammos_beach.jpg')">
+      <img src="images/ammos_beach.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/kipos_sun.jpg')">
+      <img src="images/kipos_sun.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/img_30.jpg')">
+      <img src="images/img_30.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/spring_kids.jpg')">
+      <img src="images/spring_kids.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/spring_girl.jpg')">
+      <img src="images/spring_girl.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/fonias_lying.jpg')">
+      <img src="images/fonias_lying.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/fonias_jump2.jpg')">
+      <img src="images/fonias_jump2.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/img_mikro_ext.jpg')">
+      <img src="images/img_mikro_ext.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/img_04.jpg')">
+      <img src="images/img_04.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/img_15.jpg')">
+      <img src="images/img_15.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/img_32.jpg')">
+      <img src="images/img_32.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/mikro_kitchen.jpg')">
+      <img src="images/mikro_kitchen.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/img_14.jpg')">
+      <img src="images/img_14.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/megalo_kitchen.jpg')">
+      <img src="images/megalo_kitchen.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/img_19.jpg')">
+      <img src="images/img_19.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/megalo_yoga.jpg')">
+      <img src="images/megalo_yoga.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/img_hero.jpg')">
+      <img src="images/img_hero.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+    </div>
+  </div>
+  </div>
+  </div>
+  </div>
+</div>
+
+<!-- Lightbox -->
+<div id="lightbox" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.9);z-index:999;align-items:center;justify-content:center;cursor:pointer;" onclick="closeLightbox()">
+  <img id="lightbox-img" src="" style="max-width:90vw;max-height:90vh;object-fit:contain;">
+  <div style="position:absolute;top:1.5rem;right:2rem;color:white;font-size:2rem;cursor:pointer;" onclick="closeLightbox()">×</div>
+</div>
+<script>
+function openLightbox(src) {
+  document.getElementById('lightbox').style.display = 'flex';
+  document.getElementById('lightbox-img').src = src;
+}
+function closeLightbox() {
+  document.getElementById('lightbox').style.display = 'none';
+}
+</script>
+
+
+<footer>
+  <div class="footer-logo">Forest Sea View Villas</div>
+  <div class="footer-tagline">Two forest houses above the Aegean · Ano Kariotes, Samothraki</div>
+  <div class="footer-bottom">
+    <span>© 2025 Forest Sea View Villas. All rights reserved.</span>
+    <span>Ano Kariotes · Samothraki · Greece</span>
+  </div>
+</footer>
+
+</div>
+</body>
+</html>

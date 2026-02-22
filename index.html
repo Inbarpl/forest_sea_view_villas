@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home · Forest Sea View Villas</title>
+<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --stone: #c4b49a; --earth: #8b7355; --bark: #5c4a32; --moss: #6b7c5a;
+    --sage: #9aaa8a; --cream: #f5f0e8; --parchment: #ede4d3; --deep: #2c2416;
+    --water: #2a8a96; --sky: #a8d8e0;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Jost', sans-serif;
+    background-color: #e2dcc0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.015 0.7' numOctaves='4' seed='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0.15'/%3E%3CfeBlend in='SourceGraphic' mode='multiply'/%3E%3C/filter%3E%3Crect width='400' height='400' fill='%23e8d9c0' filter='url(%23noise)' opacity='1'/%3E%3Cline x1='0' y1='20' x2='400' y2='18' stroke='%23d4c4a5' stroke-width='1.5' opacity='0.5'/%3E%3Cline x1='0' y1='55' x2='400' y2='52' stroke='%23c8b896' stroke-width='0.8' opacity='0.4'/%3E%3Cline x1='0' y1='90' x2='400' y2='88' stroke='%23d4c4a5' stroke-width='1.2' opacity='0.45'/%3E%3Cline x1='0' y1='130' x2='400' y2='127' stroke='%23c0aa88' stroke-width='0.6' opacity='0.35'/%3E%3Cline x1='0' y1='165' x2='400' y2='163' stroke='%23d4c4a5' stroke-width='1.8' opacity='0.5'/%3E%3Cline x1='0' y1='205' x2='400' y2='202' stroke='%23c8b896' stroke-width='0.7' opacity='0.4'/%3E%3Cline x1='0' y1='240' x2='400' y2='238' stroke='%23d4c4a5' stroke-width='1.1' opacity='0.45'/%3E%3Cline x1='0' y1='275' x2='400' y2='273' stroke='%23c0aa88' stroke-width='0.9' opacity='0.38'/%3E%3Cline x1='0' y1='315' x2='400' y2='312' stroke='%23d4c4a5' stroke-width='1.4' opacity='0.5'/%3E%3Cline x1='0' y1='350' x2='400' y2='348' stroke='%23c8b896' stroke-width='0.7' opacity='0.4'/%3E%3Cline x1='0' y1='385' x2='400' y2='383' stroke='%23d4c4a5' stroke-width='1.0' opacity='0.45'/%3E%3C/svg%3E");
+    background-size: 400px 400px;
+    color: var(--deep);
+    overflow-x: hidden;
+    padding: 30px;
+  }
+  #frame {
+    outline: 3px solid #4a8a7a;
+    overflow: hidden;
+    background: var(--cream);
+  }
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.2rem 3rem;
+    background: rgba(44,36,22,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(42,138,150,0.35);
+  }
+  .nav-logo { font-family:'Yeseva One', serif; font-size:1.15rem; color:var(--stone); letter-spacing:0.08em; text-decoration:none; }
+  .nav-links { display:flex; gap:2.5rem; list-style:none; }
+  .nav-links a { font-family:'Jost',sans-serif; font-weight:300; font-size:0.88rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--parchment); text-decoration:none; transition:color 0.3s; }
+  .nav-links a:hover, .nav-links a.active { color:var(--stone); border-bottom: 1px solid var(--stone); padding-bottom:2px; }
+  .section-label { font-size:0.88rem; letter-spacing:0.3em; text-transform:uppercase; color:var(--stone); margin-bottom:1.5rem; display:block; }
+  .section-header { text-align:center; margin-bottom:4rem; }
+  .section-header h2 { font-family:'Yeseva One', serif; font-size:clamp(2rem,4vw,3rem); color:var(--bark); margin-bottom:1rem; }
+  .section-header p { font-family:'Cormorant Garamond',serif; font-size:1.1rem; font-style:italic; color:var(--earth); max-width:500px; margin:0 auto; }
+  .divider { width:60px; height:1px; background:var(--stone); margin:1.5rem auto; }
+  .btn-primary { display:inline-block; padding:0.9rem 2.4rem; background:var(--bark); color:var(--cream); font-family:'Jost',sans-serif; font-weight:400; font-size:0.88rem; letter-spacing:0.2em; text-transform:uppercase; text-decoration:none; border:1px solid var(--bark); transition:all 0.35s; }
+  .btn-primary:hover { background:transparent; color:var(--bark); }
+  footer { background:var(--deep); padding:3rem 8vw 2rem; color:var(--stone); }
+  .footer-bottom { display:flex; justify-content:space-between; align-items:center; font-size:0.75rem; color:rgba(196,180,154,0.5); padding-top:2rem; border-top:1px solid rgba(196,180,154,0.15); }
+  .footer-logo { font-family:'Yeseva One', serif; font-size:1.2rem; color:var(--cream); margin-bottom:0.5rem; }
+  .footer-tagline { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:0.95rem; }
+  
+
+  .slide-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  .slide-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.4s ease;
+    display: block;
+  }
+  .slide-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(44,36,22,0.15);
+    color: rgba(245,240,232,0.55);
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+    width: 22px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    transition: background 0.2s, color 0.2s;
+    user-select: none;
+  }
+  .slide-arrow:hover { background: rgba(44,36,22,0.5); color: rgba(245,240,232,0.9); }
+  .slide-arrow.prev { left: 0; border-radius: 0 4px 4px 0; }
+  .slide-arrow.next { right: 0; border-radius: 4px 0 0 4px; }
+
+</style>
+</head>
+<body>
+<div id="frame">
+
+<nav>
+  <a href="index.html" class="nav-logo">Forest Sea View Villas</a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="villas.html" >Our Villas</a></li>
+    <li><a href="explore.html" >Explore</a></li>
+    <li><a href="gallery.html" >Gallery</a></li>
+    <li><a href="rates.html" >Rates</a></li>
+    <li><a href="contact.html" >Book Now</a></li>
+  </ul>
+</nav>
+
+
+<section style="position:relative; height:calc(100vh - 60px); overflow:hidden; display:flex; align-items:flex-start; padding-top:18vh;">
+  <div style="position:absolute;inset:0;">
+    <img src="images/img_hero.jpg" alt="Forest Sea View Villas" style="width:100%;height:100%;object-fit:cover;object-position:center 30%;">
+  </div>
+  <div style="position:relative;z-index:2;padding:0 8vw;max-width:800px;">
+    <p style="font-family:'Jost',sans-serif;font-weight:300;font-size:0.82rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--bark);margin-bottom:1.2rem;">Ano Kariotes · Samothraki · Northern Aegean · Greece</p>
+    <h1 style="font-family:'Yeseva One', serif;font-size:clamp(3rem,7vw,5.5rem);line-height:1.05;color:var(--deep);margin-bottom:1.5rem;">Forest &amp; Sea View<br><em style="color:var(--earth);">Villas</em></h1>
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.2rem;color:var(--bark);max-width:420px;line-height:1.7;margin-bottom:2.5rem;">Two secluded luxurious houses located in a lush forest above the Aegean sea — a short walk from the sea, the springs, and the soul of Samothraki.</p>
+    <a href="villas.html" class="btn-primary">Discover the Villas</a>
+  </div>
+</section>
+
+<div style="height:12px;background:var(--bark);"></div>
+
+<section style="display:grid;grid-template-columns:1fr 1fr;">
+  <div style="padding:6rem 5vw 6rem 8vw;background:var(--deep);display:flex;flex-direction:column;justify-content:center;">
+    <span class="section-label">Ano Kariotes · Samothraki</span>
+    <h2 style="font-family:'Yeseva One', serif;font-size:clamp(1.8rem,3vw,2.6rem);color:var(--cream);line-height:1.2;margin-bottom:1.5rem;">A secluded forest, watching the sea</h2>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--stone);line-height:1.85;margin-bottom:1rem;">Forest Sea View Villas are located in the village of Ano Kariotes, within a lush and private forest plot with open views over the Aegean. A short ride — or a leisurely 20-minute walk — brings you down to the sea, or a little further to Therma.</p>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--stone);line-height:1.85;margin-bottom:2rem;">Both houses are fully equipped with a modern kitchen, Starlink WiFi, and everything you need. A short walk through the village leads to a beautiful hidden stream with natural pools.</p>
+    <a href="villas.html" class="btn-primary" style="align-self:flex-start;">Our Villas →</a>
+  </div>
+  <div style="overflow:hidden;min-height:450px;position:relative;">
+    <img src="images/img_02.jpg" alt="Forest sea view" style="width:100%;height:100%;object-fit:cover;transition:transform 0.6s;">
+  </div>
+</section>
+
+<section style="padding:5rem 6vw;background:var(--parchment);text-align:center;">
+  <span class="section-label" style="display:block;text-align:center;">Quick Links</span>
+  <h2 style="font-family:'Yeseva One', serif;font-size:2rem;color:var(--bark);margin-bottom:3rem;">Explore the Site</h2>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;max-width:900px;margin:0 auto;">
+    <a href="villas.html" style="text-decoration:none;background:var(--cream);padding:2rem 1rem;display:block;transition:transform 0.3s;border-bottom:3px solid #4a7a52;">
+      <div style="font-family:'Yeseva One', serif;font-size:1.1rem;color:var(--bark);margin-bottom:0.5rem;">Our Villas</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.9rem;color:var(--earth);">Μικρό &amp; Μεγάλο</div>
+    </a>
+    <a href="explore.html" style="text-decoration:none;background:var(--cream);padding:2rem 1rem;display:block;transition:transform 0.3s;border-bottom:3px solid #2a8a96;">
+      <div style="font-family:'Yeseva One', serif;font-size:1.1rem;color:var(--bark);margin-bottom:0.5rem;">Explore</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.9rem;color:var(--earth);">Trails, beaches &amp; springs</div>
+    </a>
+    <a href="gallery.html" style="text-decoration:none;background:var(--cream);padding:2rem 1rem;display:block;transition:transform 0.3s;border-bottom:3px solid #8b7355;">
+      <div style="font-family:'Yeseva One', serif;font-size:1.1rem;color:var(--bark);margin-bottom:0.5rem;">Gallery</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.9rem;color:var(--earth);">Photo gallery</div>
+    </a>
+    <a href="contact.html" style="text-decoration:none;background:var(--cream);padding:2rem 1rem;display:block;transition:transform 0.3s;border-bottom:3px solid #5a9080;">
+      <div style="font-family:'Yeseva One', serif;font-size:1.1rem;color:var(--bark);margin-bottom:0.5rem;">Book Now</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.9rem;color:var(--earth);">Enquire &amp; reserve</div>
+    </a>
+  </div>
+</section>
+
+
+<footer>
+  <div class="footer-logo">Forest Sea View Villas</div>
+  <div class="footer-tagline">Two forest houses above the Aegean · Ano Kariotes, Samothraki</div>
+  <div class="footer-bottom">
+    <span>© 2025 Forest Sea View Villas. All rights reserved.</span>
+    <span>Ano Kariotes · Samothraki · Greece</span>
+  </div>
+</footer>
+
+</div>
+
+<script>
+function initSlideshows() {
+  document.querySelectorAll('.slideshow-img').forEach(img => {
+    const wrap = img.parentElement;
+    if (wrap.classList.contains('slide-wrap')) return; // already init
+
+    // Get slides from data attr or just use current src
+    const slides = img.dataset.slides ? img.dataset.slides.split(',') : [img.src.split('/').pop()];
+    // Normalise to full relative paths
+    const fullSlides = slides.map(s => s.startsWith('images/') ? s : 'images/' + s);
+    if (fullSlides.length < 1) return;
+
+    let idx = 0;
+
+    // Wrap the img in a slide-wrap div
+    const container = document.createElement('div');
+    container.className = 'slide-wrap';
+    // Copy any inline styles from parent height containers
+    container.style.width = '100%';
+    container.style.height = '100%';
+    img.parentNode.insertBefore(container, img);
+    container.appendChild(img);
+
+    // Create arrows (always, even for 1 image — you'll add more later)
+    const prev = document.createElement('button');
+    prev.className = 'slide-arrow prev';
+    prev.innerHTML = '&#9664;';
+    prev.title = 'Previous';
+
+    const next = document.createElement('button');
+    next.className = 'slide-arrow next';
+    next.innerHTML = '&#9654;';
+    next.title = 'Next';
+
+    container.appendChild(prev);
+    container.appendChild(next);
+
+    function goTo(newIdx) {
+      idx = ((newIdx % fullSlides.length) + fullSlides.length) % fullSlides.length;
+      img.style.opacity = '0';
+      setTimeout(() => {
+        img.src = fullSlides[idx];
+        img.style.opacity = '1';
+      }, 350);
+    }
+
+    prev.addEventListener('click', e => { e.stopPropagation(); goTo(idx - 1); });
+    next.addEventListener('click', e => { e.stopPropagation(); goTo(idx + 1); });
+
+    // Auto-rotate every 15 seconds
+    if (fullSlides.length > 1) {
+      setInterval(() => goTo(idx + 1), 15000);
+    }
+
+    img.style.transition = 'opacity 0.4s ease';
+  });
+}
+document.addEventListener('DOMContentLoaded', initSlideshows);
+</script>
+
+</body>
+</html>

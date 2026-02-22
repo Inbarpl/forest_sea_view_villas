@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Explore · Forest Sea View Villas</title>
+<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --stone: #c4b49a; --earth: #8b7355; --bark: #5c4a32; --moss: #6b7c5a;
+    --sage: #9aaa8a; --cream: #f5f0e8; --parchment: #ede4d3; --deep: #2c2416;
+    --water: #2a8a96; --sky: #a8d8e0;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Jost', sans-serif;
+    background-color: #e2dcc0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.015 0.7' numOctaves='4' seed='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0.15'/%3E%3CfeBlend in='SourceGraphic' mode='multiply'/%3E%3C/filter%3E%3Crect width='400' height='400' fill='%23e8d9c0' filter='url(%23noise)' opacity='1'/%3E%3Cline x1='0' y1='20' x2='400' y2='18' stroke='%23d4c4a5' stroke-width='1.5' opacity='0.5'/%3E%3Cline x1='0' y1='55' x2='400' y2='52' stroke='%23c8b896' stroke-width='0.8' opacity='0.4'/%3E%3Cline x1='0' y1='90' x2='400' y2='88' stroke='%23d4c4a5' stroke-width='1.2' opacity='0.45'/%3E%3Cline x1='0' y1='130' x2='400' y2='127' stroke='%23c0aa88' stroke-width='0.6' opacity='0.35'/%3E%3Cline x1='0' y1='165' x2='400' y2='163' stroke='%23d4c4a5' stroke-width='1.8' opacity='0.5'/%3E%3Cline x1='0' y1='205' x2='400' y2='202' stroke='%23c8b896' stroke-width='0.7' opacity='0.4'/%3E%3Cline x1='0' y1='240' x2='400' y2='238' stroke='%23d4c4a5' stroke-width='1.1' opacity='0.45'/%3E%3Cline x1='0' y1='275' x2='400' y2='273' stroke='%23c0aa88' stroke-width='0.9' opacity='0.38'/%3E%3Cline x1='0' y1='315' x2='400' y2='312' stroke='%23d4c4a5' stroke-width='1.4' opacity='0.5'/%3E%3Cline x1='0' y1='350' x2='400' y2='348' stroke='%23c8b896' stroke-width='0.7' opacity='0.4'/%3E%3Cline x1='0' y1='385' x2='400' y2='383' stroke='%23d4c4a5' stroke-width='1.0' opacity='0.45'/%3E%3C/svg%3E");
+    background-size: 400px 400px;
+    color: var(--deep);
+    overflow-x: hidden;
+    padding: 30px;
+  }
+  #frame {
+    outline: 3px solid #4a8a7a;
+    overflow: hidden;
+    background: var(--cream);
+  }
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.2rem 3rem;
+    background: rgba(44,36,22,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(42,138,150,0.35);
+  }
+  .nav-logo { font-family:'Yeseva One', serif; font-size:1.15rem; color:var(--stone); letter-spacing:0.08em; text-decoration:none; }
+  .nav-links { display:flex; gap:2.5rem; list-style:none; }
+  .nav-links a { font-family:'Jost',sans-serif; font-weight:300; font-size:0.88rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--parchment); text-decoration:none; transition:color 0.3s; }
+  .nav-links a:hover, .nav-links a.active { color:var(--stone); border-bottom: 1px solid var(--stone); padding-bottom:2px; }
+  .section-label { font-size:0.88rem; letter-spacing:0.3em; text-transform:uppercase; color:var(--stone); margin-bottom:1.5rem; display:block; }
+  .section-header { text-align:center; margin-bottom:4rem; }
+  .section-header h2 { font-family:'Yeseva One', serif; font-size:clamp(2rem,4vw,3rem); color:var(--bark); margin-bottom:1rem; }
+  .section-header p { font-family:'Cormorant Garamond',serif; font-size:1.1rem; font-style:italic; color:var(--earth); max-width:500px; margin:0 auto; }
+  .divider { width:60px; height:1px; background:var(--stone); margin:1.5rem auto; }
+  .btn-primary { display:inline-block; padding:0.9rem 2.4rem; background:var(--bark); color:var(--cream); font-family:'Jost',sans-serif; font-weight:400; font-size:0.88rem; letter-spacing:0.2em; text-transform:uppercase; text-decoration:none; border:1px solid var(--bark); transition:all 0.35s; }
+  .btn-primary:hover { background:transparent; color:var(--bark); }
+  footer { background:var(--deep); padding:3rem 8vw 2rem; color:var(--stone); }
+  .footer-bottom { display:flex; justify-content:space-between; align-items:center; font-size:0.75rem; color:rgba(196,180,154,0.5); padding-top:2rem; border-top:1px solid rgba(196,180,154,0.15); }
+  .footer-logo { font-family:'Yeseva One', serif; font-size:1.2rem; color:var(--cream); margin-bottom:0.5rem; }
+  .footer-tagline { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:0.95rem; }
+  
+
+  .slide-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  .slide-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.4s ease;
+    display: block;
+  }
+  .slide-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(44,36,22,0.15);
+    color: rgba(245,240,232,0.55);
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+    width: 22px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    transition: background 0.2s, color 0.2s;
+    user-select: none;
+  }
+  .slide-arrow:hover { background: rgba(44,36,22,0.5); color: rgba(245,240,232,0.9); }
+  .slide-arrow.prev { left: 0; border-radius: 0 4px 4px 0; }
+  .slide-arrow.next { right: 0; border-radius: 4px 0 0 4px; }
+
+</style>
+</head>
+<body>
+<div id="frame">
+
+<nav>
+  <a href="index.html" class="nav-logo">Forest Sea View Villas</a>
+  <ul class="nav-links">
+    <li><a href="index.html" >Home</a></li>
+    <li><a href="villas.html" >Our Villas</a></li>
+    <li><a href="explore.html" class="active">Explore</a></li>
+    <li><a href="gallery.html" >Gallery</a></li>
+    <li><a href="rates.html" >Rates</a></li>
+    <li><a href="contact.html" >Book Now</a></li>
+  </ul>
+</nav>
+
+
+<div style="padding:5rem 6vw;background:var(--cream);">
+  <div class="section-header">
+    <span class="section-label">Explore</span>
+    <h2>The Island Around You</h2>
+    <div class="divider"></div>
+    <p>Samothraki rewards the curious. Here are our favourite places — each one a small adventure.</p>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem;max-width:1100px;margin:0 auto;">
+
+    <div style="background:var(--parchment);overflow:hidden;border-left:4px solid #4a7a52;display:flex;flex-direction:column;">
+      <div style="height:220px;overflow:hidden;"><img src="images/img_10.jpg" data-slides="images/img_10.jpg" class="slideshow-img" alt="Therma Hot Springs" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div style="padding:2rem;flex:1;">
+        <div style="font-size:0.75rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--moss);margin-bottom:0.6rem;">Hot Springs</div>
+        <h3 style="font-family:'Yeseva One', serif;font-size:1.3rem;color:var(--bark);margin-bottom:0.8rem;">Therma Hot Springs</h3>
+        <p style="font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--earth);line-height:1.75;">A short climb from Therma village leads to four stone pools of thermal water at varying temperatures. Soak while the Aegean unfolds below — forest, beach and sea all in one breathtaking frame. This is also the trailhead for Mount Fengari; a hot bath after the long climb is deeply restorative.</p>
+      </div>
+    </div>
+
+    <div style="background:var(--parchment);overflow:hidden;border-left:4px solid #2a8a96;display:flex;flex-direction:column;">
+      <div style="height:220px;overflow:hidden;"><img src="images/img_09.jpg" data-slides="images/img_09.jpg,images/img_06.jpg" class="slideshow-img" alt="Kipos Beach" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div style="padding:2rem;flex:1;">
+        <div style="font-size:0.75rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--water);margin-bottom:0.6rem;">Beach</div>
+        <h3 style="font-family:'Yeseva One', serif;font-size:1.3rem;color:var(--bark);margin-bottom:0.8rem;">Kipos Beach</h3>
+        <p style="font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--earth);line-height:1.75;">A natural pebble beach tucked beneath mountain slopes — no sunbeds, no crowds, just the Aegean and the occasional sailing boat drifting by. One of our absolute favourites, especially in the late afternoon light. Bring beers, tsipouro and snacks. On the way back, stop at <em>Taverna Karydies</em> (Ano Meria 21) for a proper Samothrakian meal.</p>
+      </div>
+    </div>
+
+    <div style="background:var(--parchment);overflow:hidden;border-left:4px solid #8b7355;display:flex;flex-direction:column;">
+      <div style="height:220px;overflow:hidden;"><img src="images/img_02.jpg" data-slides="images/img_02.jpg,images/img_fengari.jpg,images/img_01.jpg" class="slideshow-img" alt="Mount Fengari Summit" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div style="padding:2rem;flex:1;">
+        <div style="font-size:0.75rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--earth);margin-bottom:0.6rem;">Trek</div>
+        <h3 style="font-family:'Yeseva One', serif;font-size:1.3rem;color:var(--bark);margin-bottom:0.8rem;">Mount Fengari Summit</h3>
+        <p style="font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--earth);line-height:1.75;">An 8 km climb from the Therma hot springs through Mediterranean scrubland, ancient oak forest, then dramatic bare rock above the treeline — with the Aegean shimmering below the whole way. Well marked with E6 signs and rock cairns. We strongly recommend the <em>Wikiloc</em> app. Start very early. <a href="https://www.samothraki.com/en/activities-and-places/mount-saos-fengari" target="_blank" style="color:var(--moss);">Trail info →</a></p>
+      </div>
+    </div>
+
+    <div style="background:var(--parchment);overflow:hidden;border-left:4px solid #5a9080;display:flex;flex-direction:column;">
+      <div style="height:220px;overflow:hidden;"><img src="images/img_29.jpg" data-slides="images/img_29.jpg,images/ammos_beach.jpg,images/kipos_sun.jpg" class="slideshow-img" alt="Pachia Ammos" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div style="padding:2rem;flex:1;">
+        <div style="font-size:0.75rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--stone);margin-bottom:0.6rem;">Beach</div>
+        <h3 style="font-family:'Yeseva One', serif;font-size:1.3rem;color:var(--bark);margin-bottom:0.8rem;">Pachia Ammos</h3>
+        <p style="font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--earth);line-height:1.75;">A wide sandy bay with dramatic headland views. The western end has organised areas with shade, sunbeds and food. For a wilder experience, park on the eastern side of the lagoon where the beach thins out and coastal trails lead on to hidden coves.</p>
+      </div>
+    </div>
+
+    <div style="background:var(--parchment);overflow:hidden;border-left:4px solid #7aab82;display:flex;flex-direction:column;">
+      <div style="height:300px;overflow:hidden;position:relative;" class="media-carousel" data-current="0">
+      <div class="media-slot active-slot" style="position:absolute;inset:0;width:100%;height:100%;">
+        <img src="images/fonias_lying.jpg" data-slides="images/fonias_lying.jpg,images/fonias_jump2.jpg" class="slideshow-img" alt="Fonias Waterfalls" style="width:100%;height:100%;object-fit:cover;display:block;">
+      </div>
+      
+      <button class="slide-arrow prev" onclick="carouselStep(this,-1)">&#9664;</button>
+      <button class="slide-arrow next" onclick="carouselStep(this,1)">&#9654;</button>
+    </div>
+      <div style="padding:2rem;flex:1;">
+        <div style="font-size:0.75rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--sage);margin-bottom:0.6rem;">Waterfall Trail</div>
+        <h3 style="font-family:'Yeseva One', serif;font-size:1.3rem;color:var(--bark);margin-bottom:0.8rem;">Fonias Waterfalls</h3>
+        <p style="font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--earth);line-height:1.75;">A stunning 4.5 km trail along the river between ancient trees and crystal-clear pools. At the end lies the First Waterfall of Fonias — a wide, deep pool fed by a dramatic cascade, perfect for swimming. The trail is relatively easy to the first waterfall; beyond it the gorge steepens and the pools grow wilder.</p>
+      </div>
+    </div>
+
+    <div style="background:var(--parchment);overflow:hidden;border-left:4px solid #4a7a52;display:flex;flex-direction:column;">
+      <div style="height:220px;overflow:hidden;"><img src="images/img_30.jpg" data-slides="images/img_30.jpg,images/spring_kids.jpg,images/spring_girl.jpg" class="slideshow-img" alt="Village Spring Trail" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div style="padding:2rem;flex:1;">
+        <div style="font-size:0.75rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--moss);margin-bottom:0.6rem;">Just Outside</div>
+        <h3 style="font-family:'Yeseva One', serif;font-size:1.3rem;color:var(--bark);margin-bottom:0.8rem;">The Village Spring Trail</h3>
+        <p style="font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--earth);line-height:1.75;">A short walk through Ano Kariotes leads to a beautiful rocky spring trail with crystal-clear pools and sweeping views to the Aegean — a perfect afternoon adventure right from your doorstep. Therma village, with its restaurants and nightlife, is just a short drive or evening stroll away.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<footer>
+  <div class="footer-logo">Forest Sea View Villas</div>
+  <div class="footer-tagline">Two forest houses above the Aegean · Ano Kariotes, Samothraki</div>
+  <div class="footer-bottom">
+    <span>© 2025 Forest Sea View Villas. All rights reserved.</span>
+    <span>Ano Kariotes · Samothraki · Greece</span>
+  </div>
+</footer>
+
+</div>
+
+
+<script>
+function initSlideshows() {
+  document.querySelectorAll('.slideshow-img').forEach(img => {
+    const wrap = img.parentElement;
+    if (wrap.classList.contains('slide-wrap')) return; // already init
+
+    // Get slides from data attr or just use current src
+    const slides = img.dataset.slides ? img.dataset.slides.split(',') : [img.src.split('/').pop()];
+    // Normalise to full relative paths
+    const fullSlides = slides.map(s => s.startsWith('images/') ? s : 'images/' + s);
+    if (fullSlides.length < 1) return;
+
+    let idx = 0;
+
+    // Wrap the img in a slide-wrap div
+    const container = document.createElement('div');
+    container.className = 'slide-wrap';
+    // Copy any inline styles from parent height containers
+    container.style.width = '100%';
+    container.style.height = '100%';
+    img.parentNode.insertBefore(container, img);
+    container.appendChild(img);
+
+    // Create arrows (always, even for 1 image — you'll add more later)
+    const prev = document.createElement('button');
+    prev.className = 'slide-arrow prev';
+    prev.innerHTML = '&#9664;';
+    prev.title = 'Previous';
+
+    const next = document.createElement('button');
+    next.className = 'slide-arrow next';
+    next.innerHTML = '&#9654;';
+    next.title = 'Next';
+
+    container.appendChild(prev);
+    container.appendChild(next);
+
+    function goTo(newIdx) {
+      idx = ((newIdx % fullSlides.length) + fullSlides.length) % fullSlides.length;
+      img.style.opacity = '0';
+      setTimeout(() => {
+        img.src = fullSlides[idx];
+        img.style.opacity = '1';
+      }, 350);
+    }
+
+    prev.addEventListener('click', e => { e.stopPropagation(); goTo(idx - 1); });
+    next.addEventListener('click', e => { e.stopPropagation(); goTo(idx + 1); });
+
+    // Auto-rotate every 15 seconds
+    if (fullSlides.length > 1) {
+      setInterval(() => goTo(idx + 1), 15000);
+    }
+
+    img.style.transition = 'opacity 0.4s ease';
+  });
+}
+document.addEventListener('DOMContentLoaded', initSlideshows);
+</script>
+
+
+
+
+<script>
+function carouselStep(btn, dir) {
+  const carousel = btn.closest('.media-carousel');
+  const slots = carousel.querySelectorAll('.media-slot');
+  let cur = parseInt(carousel.dataset.current) || 0;
+  slots[cur].classList.remove('active-slot');
+  slots[cur].style.opacity = '0';
+  cur = ((cur + dir) + slots.length) % slots.length;
+  carousel.dataset.current = cur;
+  slots[cur].style.opacity = '1';
+  slots[cur].classList.add('active-slot');
+}
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.media-carousel').forEach(carousel => {
+    setInterval(() => carouselStep(carousel.querySelector('.slide-arrow.next'), 1), 15000);
+  });
+});
+</script>
+
+<script>
+document.querySelectorAll('.slideshow-img').forEach(img => {
+  const raw = img.dataset.slides ? img.dataset.slides.split(',') : [];
+  if (raw.length < 2) return;
+  let idx = 0;
+  const prev = img.parentElement.querySelector('.slide-arrow.prev');
+  const next = img.parentElement.querySelector('.slide-arrow.next');
+  function goTo(n) {
+    idx = ((n % raw.length) + raw.length) % raw.length;
+    img.style.opacity = '0';
+    setTimeout(() => { img.src = raw[idx]; img.style.opacity = '1'; }, 350);
+  }
+  if (prev) prev.addEventListener('click', e => { e.stopPropagation(); goTo(idx-1); });
+  if (next) next.addEventListener('click', e => { e.stopPropagation(); goTo(idx+1); });
+  img.style.transition = 'opacity 0.4s ease';
+  setInterval(() => goTo(idx+1), 15000);
+});
+</script>
+
+</body>
+</html>
