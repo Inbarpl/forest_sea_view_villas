@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
 <title>Rates · Forest Sea View Villas</title>
 <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -51,6 +54,42 @@
   .footer-logo { font-family:'Yeseva One', serif; font-size:1.2rem; color:var(--cream); margin-bottom:0.5rem; }
   .footer-tagline { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:0.95rem; }
   
+
+  .book-direct-bar {
+    background: linear-gradient(90deg, #6b4c2a 0%, #3a6b5a 50%, #2a7a8a 100%);
+    text-align: center;
+    padding: 0.7rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  .book-direct-bar p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: #e8e4d8;
+    margin: 0;
+  }
+  .book-direct-btn {
+    display: inline-block;
+    padding: 0.5rem 1.6rem;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(220,200,168,0.5);
+    color: #e8e4d8;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s;
+    white-space: nowrap;
+  }
+  .book-direct-btn:hover {
+    background: rgba(255,255,255,0.25);
+    color: #ffffff;
+  }
+
 </style>
 </head>
 <body>
@@ -59,14 +98,26 @@
 <nav>
   <a href="index.html" class="nav-logo">Forest Sea View Villas</a>
   <ul class="nav-links">
-    <li><a href="index.html" >Home</a></li>
-    <li><a href="villas.html" >Our Villas</a></li>
-    <li><a href="explore.html" >Explore</a></li>
-    <li><a href="gallery.html" >Gallery</a></li>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="villas.html">Our Villas</a></li>
+    <li><a href="explore.html">Explore</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
     <li><a href="rates.html" class="active">Rates</a></li>
-    <li><a href="contact.html" >Book Now</a></li>
+    <li><a href="contact.html">Book Now</a></li>
+    <li><a href="info.html">Useful Info</a></li>
   </ul>
 </nav>
+
+<!-- BOOK DIRECT BAR -->
+<div class="book-direct-bar">
+  <p>Book directly with us &amp; skip the platform fee</p>
+  <a class="book-direct-btn"
+     href="mailto:inbar.p@mail.huji.ac.il?subject=Booking%20Enquiry%20%E2%80%94%20Forest%20Sea%20View%20Villas&body=Hello%2C%0A%0AI%20am%20interested%20in%20booking%20one%20of%20your%20villas.%0A%0APreferred%20villa%3A%20%0ACheck-in%20date%3A%20%0ACheck-out%20date%3A%20%0ANumber%20of%20guests%3A%20%0A%0AThank%20you%21">
+    ✉ Book Direct
+  </a>
+</div>
+
+
 
 
 <div style="padding:5rem 6vw;background:var(--parchment);">

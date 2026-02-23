@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
 <title>Gallery · Forest Sea View Villas</title>
 <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -51,6 +54,42 @@
   .footer-logo { font-family:'Yeseva One', serif; font-size:1.2rem; color:var(--cream); margin-bottom:0.5rem; }
   .footer-tagline { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:0.95rem; }
   
+
+  .book-direct-bar {
+    background: linear-gradient(90deg, #6b4c2a 0%, #3a6b5a 50%, #2a7a8a 100%);
+    text-align: center;
+    padding: 0.7rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  .book-direct-bar p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: #e8e4d8;
+    margin: 0;
+  }
+  .book-direct-btn {
+    display: inline-block;
+    padding: 0.5rem 1.6rem;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(220,200,168,0.5);
+    color: #e8e4d8;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s;
+    white-space: nowrap;
+  }
+  .book-direct-btn:hover {
+    background: rgba(255,255,255,0.25);
+    color: #ffffff;
+  }
+
 </style>
 </head>
 <body>
@@ -59,14 +98,26 @@
 <nav>
   <a href="index.html" class="nav-logo">Forest Sea View Villas</a>
   <ul class="nav-links">
-    <li><a href="index.html" >Home</a></li>
-    <li><a href="villas.html" >Our Villas</a></li>
-    <li><a href="explore.html" >Explore</a></li>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="villas.html">Our Villas</a></li>
+    <li><a href="explore.html">Explore</a></li>
     <li><a href="gallery.html" class="active">Gallery</a></li>
-    <li><a href="rates.html" >Rates</a></li>
-    <li><a href="contact.html" >Book Now</a></li>
+    <li><a href="rates.html">Rates</a></li>
+    <li><a href="contact.html">Book Now</a></li>
+    <li><a href="info.html">Useful Info</a></li>
   </ul>
 </nav>
+
+<!-- BOOK DIRECT BAR -->
+<div class="book-direct-bar">
+  <p>Book directly with us &amp; skip the platform fee</p>
+  <a class="book-direct-btn"
+     href="mailto:inbar.p@mail.huji.ac.il?subject=Booking%20Enquiry%20%E2%80%94%20Forest%20Sea%20View%20Villas&body=Hello%2C%0A%0AI%20am%20interested%20in%20booking%20one%20of%20your%20villas.%0A%0APreferred%20villa%3A%20%0ACheck-in%20date%3A%20%0ACheck-out%20date%3A%20%0ANumber%20of%20guests%3A%20%0A%0AThank%20you%21">
+    ✉ Book Direct
+  </a>
+</div>
+
+
 
 
 <div style="padding:5rem 6vw;background:var(--cream);">
@@ -77,95 +128,80 @@
     <p>Wild streams, stone terraces, ancient forests and the restless Aegean horizon.</p>
   </div>
   <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;max-width:1200px;margin:0 auto;">
-    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/img_05.jpg')">
-      <img src="images/img_05.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/therma_pool.jpg')">
+      <img loading="lazy" src="images/therma_pool.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
     </div>
-    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/img_07.jpg')">
-      <img src="images/img_07.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/fengari_rocky_trail.jpg')">
+      <img loading="lazy" src="images/fengari_rocky_trail.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
     </div>
-    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/img_08.jpg')">
-      <img src="images/img_08.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/ammos_aerial.jpg')">
+      <img loading="lazy" src="images/ammos_aerial.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
     </div>
-    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/img_11.jpg')">
-      <img src="images/img_11.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/forest_storm.jpg')">
+      <img loading="lazy" src="images/forest_storm.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
     </div>
-    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/img_16.jpg')">
-      <img src="images/img_16.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/forest_ferns.jpg')">
+      <img loading="lazy" src="images/forest_ferns.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
     </div>
-    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/img_20.jpg')">
-      <img src="images/img_20.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/forest_path.jpg')">
+      <img loading="lazy" src="images/forest_path.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
     </div>
-    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/img_23.jpg')">
-      <img src="images/img_23.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/kipos_love_pebbles.jpg')">
+      <img loading="lazy" src="images/kipos_love_pebbles.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
     </div>
-    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/img_24.jpg')">
-      <img src="images/img_24.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/kipos_sailboat_feet.jpg')">
+      <img loading="lazy" src="images/kipos_sailboat_feet.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
     </div>
-    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/img_09.jpg')">
-      <img src="images/img_09.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/fengari_misty_tree.jpg')">
+      <img loading="lazy" src="images/fengari_misty_tree.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
     </div>
-    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/img_06.jpg')">
-      <img src="images/img_06.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
-    </div>
-    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/img_fengari.jpg')">
-      <img src="images/img_fengari.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
-    </div>
-    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/img_01.jpg')">
-      <img src="images/img_01.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
-    </div>
-    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/img_29.jpg')">
-      <img src="images/img_29.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/fengari_oak_forest.jpg')">
+      <img loading="lazy" src="images/fengari_oak_forest.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
     </div>
     <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/ammos_beach.jpg')">
-      <img src="images/ammos_beach.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+      <img loading="lazy" src="images/ammos_beach.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
     </div>
-    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/kipos_sun.jpg')">
-      <img src="images/kipos_sun.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/kipos_sunflare.jpg')">
+      <img loading="lazy" src="images/kipos_sunflare.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
     </div>
-    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/img_30.jpg')">
-      <img src="images/img_30.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/spring_trail.jpg')">
+      <img loading="lazy" src="images/spring_trail.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
     </div>
     <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/spring_kids.jpg')">
-      <img src="images/spring_kids.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+      <img loading="lazy" src="images/spring_kids.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
     </div>
     <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/spring_girl.jpg')">
-      <img src="images/spring_girl.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+      <img loading="lazy" src="images/spring_girl.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
     </div>
-    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/fonias_lying.jpg')">
-      <img src="images/fonias_lying.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/fonias_poolside.jpg')">
+      <img loading="lazy" src="images/fonias_poolside.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
     </div>
-    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/fonias_jump2.jpg')">
-      <img src="images/fonias_jump2.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/fonias_cliff_jump2.jpg')">
+      <img loading="lazy" src="images/fonias_cliff_jump2.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
     </div>
-    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/img_mikro_ext.jpg')">
-      <img src="images/img_mikro_ext.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/mikro_exterior.jpg')">
+      <img loading="lazy" src="images/mikro_exterior.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
     </div>
-    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/img_04.jpg')">
-      <img src="images/img_04.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/mikro_ancient_rocks.jpg')">
+      <img loading="lazy" src="images/mikro_ancient_rocks.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
     </div>
-    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/img_15.jpg')">
-      <img src="images/img_15.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
-    </div>
-    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/img_32.jpg')">
-      <img src="images/img_32.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/mikro_view.jpg')">
+      <img loading="lazy" src="images/mikro_view.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
     </div>
     <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/mikro_kitchen.jpg')">
-      <img src="images/mikro_kitchen.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+      <img loading="lazy" src="images/mikro_kitchen.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
     </div>
-    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/img_14.jpg')">
-      <img src="images/img_14.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/megalo_livingroom.jpg')">
+      <img loading="lazy" src="images/megalo_livingroom.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
     </div>
     <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/megalo_kitchen.jpg')">
-      <img src="images/megalo_kitchen.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
-    </div>
-    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/img_19.jpg')">
-      <img src="images/img_19.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+      <img loading="lazy" src="images/megalo_kitchen.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
     </div>
     <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/megalo_yoga.jpg')">
-      <img src="images/megalo_yoga.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+      <img loading="lazy" src="images/megalo_yoga.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
     </div>
-    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/img_hero.jpg')">
-      <img src="images/img_hero.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+    <div style="overflow:hidden;aspect-ratio:4/3;cursor:pointer;" onclick="openLightbox('images/hero_pebbles.jpg')">
+      <img loading="lazy" src="images/hero_pebbles.jpg" alt="Samothraki" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
     </div>
   </div>
   </div>

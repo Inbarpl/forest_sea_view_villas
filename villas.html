@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
 <title>Our Villas · Forest Sea View Villas</title>
 <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -87,6 +90,42 @@
   .slide-arrow.prev { left: 0; border-radius: 0 4px 4px 0; }
   .slide-arrow.next { right: 0; border-radius: 4px 0 0 4px; }
 
+
+  .book-direct-bar {
+    background: linear-gradient(90deg, #6b4c2a 0%, #3a6b5a 50%, #2a7a8a 100%);
+    text-align: center;
+    padding: 0.7rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  .book-direct-bar p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: #e8e4d8;
+    margin: 0;
+  }
+  .book-direct-btn {
+    display: inline-block;
+    padding: 0.5rem 1.6rem;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(220,200,168,0.5);
+    color: #e8e4d8;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s;
+    white-space: nowrap;
+  }
+  .book-direct-btn:hover {
+    background: rgba(255,255,255,0.25);
+    color: #ffffff;
+  }
+
 </style>
 </head>
 <body>
@@ -95,14 +134,26 @@
 <nav>
   <a href="index.html" class="nav-logo">Forest Sea View Villas</a>
   <ul class="nav-links">
-    <li><a href="index.html" >Home</a></li>
+    <li><a href="index.html">Home</a></li>
     <li><a href="villas.html" class="active">Our Villas</a></li>
-    <li><a href="explore.html" >Explore</a></li>
-    <li><a href="gallery.html" >Gallery</a></li>
-    <li><a href="rates.html" >Rates</a></li>
-    <li><a href="contact.html" >Book Now</a></li>
+    <li><a href="explore.html">Explore</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="rates.html">Rates</a></li>
+    <li><a href="contact.html">Book Now</a></li>
+    <li><a href="info.html">Useful Info</a></li>
   </ul>
 </nav>
+
+<!-- BOOK DIRECT BAR -->
+<div class="book-direct-bar">
+  <p>Book directly with us &amp; skip the platform fee</p>
+  <a class="book-direct-btn"
+     href="mailto:inbar.p@mail.huji.ac.il?subject=Booking%20Enquiry%20%E2%80%94%20Forest%20Sea%20View%20Villas&body=Hello%2C%0A%0AI%20am%20interested%20in%20booking%20one%20of%20your%20villas.%0A%0APreferred%20villa%3A%20%0ACheck-in%20date%3A%20%0ACheck-out%20date%3A%20%0ANumber%20of%20guests%3A%20%0A%0AThank%20you%21">
+    ✉ Book Direct
+  </a>
+</div>
+
+
 
 
 <div style="padding:5rem 6vw;background:var(--parchment);">
@@ -117,7 +168,7 @@
 
     <div style="background:var(--cream);overflow:hidden;box-shadow:0 4px 30px rgba(44,36,22,0.08);">
       <div style="height:320px;overflow:hidden;">
-        <img src="images/img_04.jpg" data-slides="images/img_04.jpg,images/img_15.jpg,images/img_32.jpg,images/mikro_kitchen.jpg" class="slideshow-img" alt="Μικρό" style="width:100%;height:100%;object-fit:cover;display:block;transition:opacity 0.4s ease;">
+        <img loading="lazy" src="images/mikro_exterior_old.jpg" data-slides="images/mikro_exterior_old.jpg,images/mikro_ancient_rocks.jpg,images/mikro_view.jpg,images/mikro_kitchen.jpg" class="slideshow-img" alt="Μικρό" style="width:100%;height:100%;object-fit:cover;display:block;transition:opacity 0.4s ease;">
       </div>
       <div style="padding:2.5rem;">
         <div style="font-size:0.75rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--moss);margin-bottom:0.5rem;">Couple's Retreat · Most Romantic</div>
@@ -136,7 +187,7 @@
 
     <div style="background:var(--cream);overflow:hidden;box-shadow:0 4px 30px rgba(44,36,22,0.08);">
       <div style="height:320px;overflow:hidden;">
-        <img src="images/megalo_kitchen.jpg" data-slides="images/megalo_kitchen.jpg,images/img_19.jpg,images/img_03.jpg,images/megalo_yoga.jpg" class="slideshow-img" alt="Μεγάλο" style="width:100%;height:100%;object-fit:cover;display:block;transition:opacity 0.4s ease;">
+        <img loading="lazy" src="images/megalo_kitchen.jpg" data-slides="images/megalo_kitchen.jpg,images/megalo_interior.jpg,images/megalo_yoga_window.jpg,images/megalo_yoga.jpg" class="slideshow-img" alt="Μεγάλο" style="width:100%;height:100%;object-fit:cover;display:block;transition:opacity 0.4s ease;">
       </div>
       <div style="padding:2.5rem;">
         <div style="font-size:0.75rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--moss);margin-bottom:0.5rem;">Families &amp; Groups</div>
@@ -157,7 +208,7 @@
 </div>
 
 <div style="height:380px;overflow:hidden;position:relative;">
-  <img src="images/ammos_beach.jpg" alt="Aegean seashore" style="width:100%;height:100%;object-fit:cover;object-position:center 40%;">
+  <img loading="lazy" src="images/ammos_beach.jpg" alt="Aegean seashore" style="width:100%;height:100%;object-fit:cover;object-position:center 40%;">
   <div style="position:absolute;inset:0;background:rgba(44,36,22,0.4);display:flex;align-items:center;justify-content:center;">
     <p style="font-family:'Yeseva One', serif;font-size:clamp(1.4rem,3vw,2.2rem);color:var(--cream);text-align:center;padding:0 2rem;">"Surrounded by ancient forest,<br><em>a short walk from the wild Aegean."</em></p>
   </div>

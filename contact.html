@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
 <title>Book Now · Forest Sea View Villas</title>
 <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -51,6 +54,42 @@
   .footer-logo { font-family:'Yeseva One', serif; font-size:1.2rem; color:var(--cream); margin-bottom:0.5rem; }
   .footer-tagline { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:0.95rem; }
   
+
+  .book-direct-bar {
+    background: linear-gradient(90deg, #6b4c2a 0%, #3a6b5a 50%, #2a7a8a 100%);
+    text-align: center;
+    padding: 0.7rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  .book-direct-bar p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: #e8e4d8;
+    margin: 0;
+  }
+  .book-direct-btn {
+    display: inline-block;
+    padding: 0.5rem 1.6rem;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(220,200,168,0.5);
+    color: #e8e4d8;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s;
+    white-space: nowrap;
+  }
+  .book-direct-btn:hover {
+    background: rgba(255,255,255,0.25);
+    color: #ffffff;
+  }
+
 </style>
 </head>
 <body>
@@ -59,15 +98,26 @@
 <nav>
   <a href="index.html" class="nav-logo">Forest Sea View Villas</a>
   <ul class="nav-links">
-    <li><a href="index.html" >Home</a></li>
-    <li><a href="villas.html" >Our Villas</a></li>
-    <li><a href="explore.html" >Explore</a></li>
-    <li><a href="gallery.html" >Gallery</a></li>
-    <li><a href="rates.html" >Rates</a></li>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="villas.html">Our Villas</a></li>
+    <li><a href="explore.html">Explore</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="rates.html">Rates</a></li>
     <li><a href="contact.html" class="active">Book Now</a></li>
     <li><a href="info.html">Useful Info</a></li>
   </ul>
 </nav>
+
+<!-- BOOK DIRECT BAR -->
+<div class="book-direct-bar">
+  <p>Book directly with us &amp; skip the platform fee</p>
+  <a class="book-direct-btn"
+     href="mailto:inbar.p@mail.huji.ac.il?subject=Booking%20Enquiry%20%E2%80%94%20Forest%20Sea%20View%20Villas&body=Hello%2C%0A%0AI%20am%20interested%20in%20booking%20one%20of%20your%20villas.%0A%0APreferred%20villa%3A%20%0ACheck-in%20date%3A%20%0ACheck-out%20date%3A%20%0ANumber%20of%20guests%3A%20%0A%0AThank%20you%21">
+    ✉ Book Direct
+  </a>
+</div>
+
+
 
 
 <div style="display:grid;grid-template-columns:1fr 1fr;min-height:70vh;">
@@ -77,20 +127,26 @@
     <h2 style="font-family:'Yeseva One', serif;font-size:clamp(1.8rem,3vw,2.5rem);color:var(--bark);margin-bottom:0.8rem;">Plan Your Escape</h2>
     <p style="font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--earth);margin-bottom:2.5rem;">Send us your dates and we'll get back to you within 24 hours to confirm availability.</p>
 
-    <form id="bookingForm" style="display:flex;flex-direction:column;gap:1.2rem;">
+    <form id="bookingForm" action="https://formsubmit.co/inbar.p@mail.huji.ac.il" method="POST" style="display:flex;flex-direction:column;gap:1.2rem;">
+      <input type="hidden" name="_replyto" value="">
+      <input type="hidden" name="_subject" value="New Booking Enquiry — Forest Sea View Villas">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="thanks.html">
+      <input type="hidden" name="_subject" name="_subject" value="New Booking Enquiry — Forest Sea View Villas">
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
         <div style="display:flex;flex-direction:column;gap:0.4rem;">
           <label style="font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--earth);">First Name</label>
-          <input type="text" placeholder="Elena" required style="padding:0.85rem 1rem;border:1px solid var(--stone);background:var(--cream);font-family:'Jost',sans-serif;font-size:0.9rem;color:var(--deep);outline:none;border-radius:0;">
+          <input type="text" name="first_name" placeholder="Elena" required style="padding:0.85rem 1rem;border:1px solid var(--stone);background:var(--cream);font-family:'Jost',sans-serif;font-size:0.9rem;color:var(--deep);outline:none;border-radius:0;">
         </div>
         <div style="display:flex;flex-direction:column;gap:0.4rem;">
           <label style="font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--earth);">Last Name</label>
-          <input type="text" placeholder="Papadopoulos" required style="padding:0.85rem 1rem;border:1px solid var(--stone);background:var(--cream);font-family:'Jost',sans-serif;font-size:0.9rem;color:var(--deep);outline:none;border-radius:0;">
+          <input type="text" name="last_name" placeholder="Papadopoulos" required style="padding:0.85rem 1rem;border:1px solid var(--stone);background:var(--cream);font-family:'Jost',sans-serif;font-size:0.9rem;color:var(--deep);outline:none;border-radius:0;">
         </div>
       </div>
       <div style="display:flex;flex-direction:column;gap:0.4rem;">
         <label style="font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--earth);">Email Address</label>
-        <input type="email" placeholder="hello@example.com" required style="padding:0.85rem 1rem;border:1px solid var(--stone);background:var(--cream);font-family:'Jost',sans-serif;font-size:0.9rem;color:var(--deep);outline:none;border-radius:0;">
+        <input type="email" name="email" placeholder="hello@example.com" required style="padding:0.85rem 1rem;border:1px solid var(--stone);background:var(--cream);font-family:'Jost',sans-serif;font-size:0.9rem;color:var(--deep);outline:none;border-radius:0;">
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
         <div style="display:flex;flex-direction:column;gap:0.4rem;">
@@ -104,40 +160,60 @@
       </div>
       <div style="display:flex;flex-direction:column;gap:0.4rem;">
         <label style="font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--earth);">Preferred Villa</label>
-        <select style="padding:0.85rem 1rem;border:1px solid var(--stone);background:var(--cream);font-family:'Jost',sans-serif;font-size:0.9rem;color:var(--deep);outline:none;border-radius:0;-webkit-appearance:none;">
+        <select name="villa" style="padding:0.85rem 1rem;border:1px solid var(--stone);background:var(--cream);font-family:'Jost',sans-serif;font-size:0.9rem;color:var(--deep);outline:none;border-radius:0;-webkit-appearance:none;">
           <option value="">— Select a villa —</option>
-          <option>Μικρό (1 bed · Romantic Cabin)</option>
-          <option>Μεγάλο (2 bed · Forest House)</option>
-          <option>Not sure — please advise</option>
+          <option value="mikro">Μικρό — 1 double bed</option>
+          <option value="mikro_mattress">Μικρό — 1 double bed + mattress</option>
+          <option value="megalo">Μεγάλο — 2 double beds</option>
+          <option value="megalo_mattress">Μεγάλο — 2 double beds + mattress</option>
+          <option value="both">Both villas</option>
+          <option value="advise">Not sure — please advise</option>
         </select>
       </div>
       <div style="display:flex;flex-direction:column;gap:0.4rem;">
         <label style="font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--earth);">Number of Guests</label>
-        <input type="number" placeholder="2" min="1" max="8" style="padding:0.85rem 1rem;border:1px solid var(--stone);background:var(--cream);font-family:'Jost',sans-serif;font-size:0.9rem;color:var(--deep);outline:none;border-radius:0;">
+        <input type="number" name="guests" placeholder="2" min="1" max="8" style="padding:0.85rem 1rem;border:1px solid var(--stone);background:var(--cream);font-family:'Jost',sans-serif;font-size:0.9rem;color:var(--deep);outline:none;border-radius:0;">
       </div>
       <div style="display:flex;flex-direction:column;gap:0.4rem;">
         <label style="font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--earth);">Message (Optional)</label>
-        <textarea placeholder="Any special requests or questions…" style="padding:0.85rem 1rem;border:1px solid var(--stone);background:var(--cream);font-family:'Jost',sans-serif;font-size:0.9rem;color:var(--deep);outline:none;border-radius:0;resize:vertical;min-height:100px;"></textarea>
+        <textarea name="message" placeholder="Any special requests or questions…" style="padding:0.85rem 1rem;border:1px solid var(--stone);background:var(--cream);font-family:'Jost',sans-serif;font-size:0.9rem;color:var(--deep);outline:none;border-radius:0;resize:vertical;min-height:100px;"></textarea>
       </div>
       <button type="submit" style="padding:1rem;background:var(--bark);color:var(--cream);border:none;font-family:'Jost',sans-serif;font-size:0.88rem;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;transition:background 0.3s;">Send Enquiry</button>
       <div id="successMsg" style="display:none;background:var(--moss);color:var(--cream);padding:1rem;font-size:0.88rem;">✦ Thank you! We'll be in touch within 24 hours.</div>
     </form>
   </div>
 
-  <div style="position:relative;">
-    <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=25.3%2C40.4%2C25.8%2C40.7&layer=mapnik&marker=40.5%2C25.55" style="width:100%;height:100%;border:none;min-height:500px;" title="Samothraki Map"></iframe>
-    <div style="position:absolute;bottom:2rem;left:2rem;background:rgba(44,36,22,0.88);backdrop-filter:blur(6px);padding:1.5rem 2rem;color:var(--cream);max-width:260px;">
-      <h4 style="font-family:'Yeseva One', serif;font-size:1.1rem;margin-bottom:0.5rem;">Ano Kariotes, Samothraki</h4>
-      <p style="font-family:'Cormorant Garamond',serif;font-size:0.9rem;color:var(--stone);line-height:1.6;">Northern Aegean, Greece<br>Ferry from Alexandroupolis (~2h)<br>No airport — come by sea.</p>
+  <div style="margin-top:3rem;">
+      <div style="font-size:0.82rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--stone);margin-bottom:1rem;text-align:center;">Find Us</div>
+      <h3 style="font-family:'Yeseva One',serif;font-size:1.4rem;color:var(--bark);margin-bottom:0.5rem;text-align:center;">Ano Kariotes · Samothraki</h3>
+      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;color:var(--earth);text-align:center;margin-bottom:1.5rem;">On the slopes of Mount Fengari, above the northern coast</p>
+      <div style="width:100%;height:420px;overflow:hidden;border:1px solid var(--stone);">
+        <iframe
+          src="https://maps.google.com/maps?q=40.496960,25.582731&z=17&output=embed"
+          width="100%"
+          height="420"
+          style="border:0;display:block;"
+          allowfullscreen=""
+          loading="lazy"
+          title="Forest Sea View Villas — Ano Kariotes, Samothraki">
+        </iframe>
+      </div>
+      <div style="background:var(--parchment);padding:1rem 1.5rem;border-left:4px solid #2a8a96;margin-top:0.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;">
+        <p style="font-family:'Jost',sans-serif;font-size:0.88rem;color:var(--earth);margin:0;">
+          📍 Ano Kariotes, Samothraki 680 02, Greece
+        </p>
+        <a href="https://maps.app.goo.gl/J2BkoJjtfEYwmoku9" target="_blank"
+           style="font-family:'Jost',sans-serif;font-size:0.82rem;letter-spacing:0.12em;color:#2a8a96;text-decoration:none;text-transform:uppercase;">
+          Open in Google Maps →
+        </a>
+      </div>
     </div>
-  </div>
 </div>
 <script>
 document.getElementById('bookingForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  document.getElementById('successMsg').style.display = 'block';
-  this.reset();
-  setTimeout(() => { document.getElementById('successMsg').style.display = 'none'; }, 5000);
+  const btn = this.querySelector('button[type="submit"]');
+  btn.textContent = 'Sending…';
+  btn.disabled = true;
 });
 </script>
 

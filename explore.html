@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
 <title>Explore · Forest Sea View Villas</title>
 <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -87,6 +90,42 @@
   .slide-arrow.prev { left: 0; border-radius: 0 4px 4px 0; }
   .slide-arrow.next { right: 0; border-radius: 4px 0 0 4px; }
 
+
+  .book-direct-bar {
+    background: linear-gradient(90deg, #6b4c2a 0%, #3a6b5a 50%, #2a7a8a 100%);
+    text-align: center;
+    padding: 0.7rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  .book-direct-bar p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: #e8e4d8;
+    margin: 0;
+  }
+  .book-direct-btn {
+    display: inline-block;
+    padding: 0.5rem 1.6rem;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(220,200,168,0.5);
+    color: #e8e4d8;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s;
+    white-space: nowrap;
+  }
+  .book-direct-btn:hover {
+    background: rgba(255,255,255,0.25);
+    color: #ffffff;
+  }
+
 </style>
 </head>
 <body>
@@ -95,14 +134,26 @@
 <nav>
   <a href="index.html" class="nav-logo">Forest Sea View Villas</a>
   <ul class="nav-links">
-    <li><a href="index.html" >Home</a></li>
-    <li><a href="villas.html" >Our Villas</a></li>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="villas.html">Our Villas</a></li>
     <li><a href="explore.html" class="active">Explore</a></li>
-    <li><a href="gallery.html" >Gallery</a></li>
-    <li><a href="rates.html" >Rates</a></li>
-    <li><a href="contact.html" >Book Now</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="rates.html">Rates</a></li>
+    <li><a href="contact.html">Book Now</a></li>
+    <li><a href="info.html">Useful Info</a></li>
   </ul>
 </nav>
+
+<!-- BOOK DIRECT BAR -->
+<div class="book-direct-bar">
+  <p>Book directly with us &amp; skip the platform fee</p>
+  <a class="book-direct-btn"
+     href="mailto:inbar.p@mail.huji.ac.il?subject=Booking%20Enquiry%20%E2%80%94%20Forest%20Sea%20View%20Villas&body=Hello%2C%0A%0AI%20am%20interested%20in%20booking%20one%20of%20your%20villas.%0A%0APreferred%20villa%3A%20%0ACheck-in%20date%3A%20%0ACheck-out%20date%3A%20%0ANumber%20of%20guests%3A%20%0A%0AThank%20you%21">
+    ✉ Book Direct
+  </a>
+</div>
+
+
 
 
 <div style="padding:5rem 6vw;background:var(--cream);">
@@ -116,7 +167,7 @@
   <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem;max-width:1100px;margin:0 auto;">
 
     <div style="background:var(--parchment);overflow:hidden;border-left:4px solid #4a7a52;display:flex;flex-direction:column;">
-      <div style="height:220px;overflow:hidden;"><img src="images/img_10.jpg" data-slides="images/img_10.jpg" class="slideshow-img" alt="Therma Hot Springs" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div style="height:220px;overflow:hidden;"><img loading="lazy" src="images/therma_springs.jpg" data-slides="images/therma_springs.jpg" class="slideshow-img" alt="Therma Hot Springs" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
       <div style="padding:2rem;flex:1;">
         <div style="font-size:0.75rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--moss);margin-bottom:0.6rem;">Hot Springs</div>
         <h3 style="font-family:'Yeseva One', serif;font-size:1.3rem;color:var(--bark);margin-bottom:0.8rem;">Therma Hot Springs</h3>
@@ -125,7 +176,7 @@
     </div>
 
     <div style="background:var(--parchment);overflow:hidden;border-left:4px solid #2a8a96;display:flex;flex-direction:column;">
-      <div style="height:220px;overflow:hidden;"><img src="images/img_09.jpg" data-slides="images/img_09.jpg,images/img_06.jpg" class="slideshow-img" alt="Kipos Beach" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div style="height:220px;overflow:hidden;"><img loading="lazy" src="images/kipos_love_pebbles.jpg" data-slides="images/kipos_love_pebbles.jpg,images/kipos_sailboat_feet.jpg" class="slideshow-img" alt="Kipos Beach" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
       <div style="padding:2rem;flex:1;">
         <div style="font-size:0.75rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--water);margin-bottom:0.6rem;">Beach</div>
         <h3 style="font-family:'Yeseva One', serif;font-size:1.3rem;color:var(--bark);margin-bottom:0.8rem;">Kipos Beach</h3>
@@ -134,7 +185,7 @@
     </div>
 
     <div style="background:var(--parchment);overflow:hidden;border-left:4px solid #8b7355;display:flex;flex-direction:column;">
-      <div style="height:220px;overflow:hidden;"><img src="images/img_02.jpg" data-slides="images/img_02.jpg,images/img_fengari.jpg,images/img_01.jpg" class="slideshow-img" alt="Mount Fengari Summit" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div style="height:220px;overflow:hidden;"><img loading="lazy" src="images/fengari_sea_view.jpg" data-slides="images/fengari_sea_view.jpg,images/fengari_misty_tree.jpg,images/fengari_oak_forest.jpg" class="slideshow-img" alt="Mount Fengari Summit" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
       <div style="padding:2rem;flex:1;">
         <div style="font-size:0.75rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--earth);margin-bottom:0.6rem;">Trek</div>
         <h3 style="font-family:'Yeseva One', serif;font-size:1.3rem;color:var(--bark);margin-bottom:0.8rem;">Mount Fengari Summit</h3>
@@ -143,7 +194,7 @@
     </div>
 
     <div style="background:var(--parchment);overflow:hidden;border-left:4px solid #5a9080;display:flex;flex-direction:column;">
-      <div style="height:220px;overflow:hidden;"><img src="images/img_29.jpg" data-slides="images/img_29.jpg,images/ammos_beach.jpg,images/kipos_sun.jpg" class="slideshow-img" alt="Pachia Ammos" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div style="height:220px;overflow:hidden;"><img loading="lazy" src="images/ammos_aerial2.jpg" data-slides="images/ammos_aerial2.jpg,images/ammos_beach.jpg,images/kipos_sunflare.jpg" class="slideshow-img" alt="Pachia Ammos" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
       <div style="padding:2rem;flex:1;">
         <div style="font-size:0.75rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--stone);margin-bottom:0.6rem;">Beach</div>
         <h3 style="font-family:'Yeseva One', serif;font-size:1.3rem;color:var(--bark);margin-bottom:0.8rem;">Pachia Ammos</h3>
@@ -154,7 +205,7 @@
     <div style="background:var(--parchment);overflow:hidden;border-left:4px solid #7aab82;display:flex;flex-direction:column;">
       <div style="height:300px;overflow:hidden;position:relative;" class="media-carousel" data-current="0">
       <div class="media-slot active-slot" style="position:absolute;inset:0;width:100%;height:100%;">
-        <img src="images/fonias_lying.jpg" data-slides="images/fonias_lying.jpg,images/fonias_jump2.jpg" class="slideshow-img" alt="Fonias Waterfalls" style="width:100%;height:100%;object-fit:cover;display:block;">
+        <img loading="lazy" src="images/fonias_poolside.jpg" data-slides="images/fonias_poolside.jpg,images/fonias_cliff_jump2.jpg" class="slideshow-img" alt="Fonias Waterfalls" style="width:100%;height:100%;object-fit:cover;display:block;">
       </div>
       
       <button class="slide-arrow prev" onclick="carouselStep(this,-1)">&#9664;</button>
@@ -168,7 +219,7 @@
     </div>
 
     <div style="background:var(--parchment);overflow:hidden;border-left:4px solid #4a7a52;display:flex;flex-direction:column;">
-      <div style="height:220px;overflow:hidden;"><img src="images/img_30.jpg" data-slides="images/img_30.jpg,images/spring_kids.jpg,images/spring_girl.jpg" class="slideshow-img" alt="Village Spring Trail" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+      <div style="height:220px;overflow:hidden;"><img loading="lazy" src="images/spring_trail.jpg" data-slides="images/spring_trail.jpg,images/spring_kids.jpg,images/spring_girl.jpg" class="slideshow-img" alt="Village Spring Trail" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
       <div style="padding:2rem;flex:1;">
         <div style="font-size:0.75rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--moss);margin-bottom:0.6rem;">Just Outside</div>
         <h3 style="font-family:'Yeseva One', serif;font-size:1.3rem;color:var(--bark);margin-bottom:0.8rem;">The Village Spring Trail</h3>
