@@ -16,55 +16,29 @@
 
 
 
-  .nav-hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    padding: 0.5rem;
-    background: none;
-    border: none;
-    margin-left: auto;
-    z-index: 200;
-  }
-  .nav-hamburger span {
-    display: block;
-    width: 26px;
-    height: 2px;
-    background: #e8d9c0;
-  }
+  
+  
+
+
+  #navToggle { display: none; }
   @media (max-width: 768px) {
-    nav { flex-wrap: wrap !important; padding: 1rem 1.2rem !important; }
-    .nav-hamburger { display: flex !important; }
-    .nav-links {
-      display: none !important;
-      flex-direction: column !important;
-      width: 100% !important;
-      background: rgba(44,36,22,0.97) !important;
-      margin-top: 0.5rem !important;
-      gap: 0 !important;
-      list-style: none !important;
-      padding: 0 !important;
-    }
-    .nav-links.open { display: flex !important; }
-    .nav-links li a {
-      display: block !important;
-      padding: 0.9rem 1.5rem !important;
-      font-size: 0.9rem !important;
-      border-bottom: 1px solid rgba(255,255,255,0.06) !important;
-    }
-    .book-direct-bar { flex-direction: column !important; gap: 0.7rem !important; padding: 0.8rem 1rem !important; }
+    nav { flex-wrap: wrap !important; padding: 1rem 1.2rem !important; position: sticky !important; top: 0 !important; z-index: 1000 !important; }
+    #navToggle { display: flex !important; }
+    .nav-links { display: none; flex-direction: column !important; width: 100% !important; background: rgba(44,36,22,0.97) !important; margin-top: 0.5rem !important; gap: 0 !important; list-style: none !important; padding: 0 !important; }
+    .nav-links li a { display: block !important; padding: 0.9rem 1.5rem !important; font-size: 0.9rem !important; border-bottom: 1px solid rgba(255,255,255,0.06) !important; }
+    .book-direct-bar, div[style*="background:linear-gradient(90deg,#6b4c2a"] { flex-direction: column !important; gap: 0.7rem !important; padding: 0.8rem 1rem !important; }
     body { overflow-x: hidden !important; }
     * { box-sizing: border-box !important; }
     div[style*="grid-template-columns:repeat(2"], div[style*="grid-template-columns: repeat(2"],
     div[style*="grid-template-columns:repeat(3"], div[style*="grid-template-columns: repeat(3"],
     div[style*="grid-template-columns:280px"], div[style*="grid-template-columns: 280px"],
     div[style*="grid-template-columns:1fr 1fr"], div[style*="grid-template-columns: 1fr 1fr"],
-    div[style*="grid-template-columns:400px"], div[style*="grid-template-columns: 400px"] {
+    div[style*="grid-template-columns:400px"] {
       display: flex !important; flex-direction: column !important; width: 100% !important;
     }
-    div[style*="grid-template-columns:repeat(4,1fr)"], div[style*="grid-template-columns: repeat(4,1fr)"],
-    .gallery-grid { display: grid !important; grid-template-columns: repeat(2,1fr) !important; }
+    div[style*="grid-template-columns:repeat(4,1fr)"], .gallery-grid {
+      display: grid !important; grid-template-columns: repeat(2,1fr) !important;
+    }
     div[style*="max-width:1100px"], div[style*="max-width:900px"], div[style*="max-width:1200px"],
     div[style*="max-width: 1100px"], div[style*="max-width: 900px"], div[style*="max-width: 1200px"] {
       padding-left: 1rem !important; padding-right: 1rem !important; width: 100% !important;
@@ -90,31 +64,7 @@
 
 
 
-<script>
-(function(){
-  var btn = document.getElementById('navToggle');
-  var menu = document.querySelector('.nav-links');
-  if(btn && menu){
-    btn.addEventListener('click', function(){
-      menu.classList.toggle('open');
-    });
-    menu.querySelectorAll('a').forEach(function(a){
-      a.addEventListener('click', function(){ menu.classList.remove('open'); });
-    });
-  }
-})();
-</script>
-<script>
-(function(){
-  var btn = document.getElementById('navToggle');
-  var menu = document.querySelector('.nav-links');
-  if(btn && menu){
-    btn.addEventListener('click', function(){ menu.classList.toggle('open'); });
-    menu.querySelectorAll('a').forEach(function(a){
-      a.addEventListener('click', function(){ menu.classList.remove('open'); });
-    });
-  }
-})();
-</script>
+
+
 </body>
 </html>

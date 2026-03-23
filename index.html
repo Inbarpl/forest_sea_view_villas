@@ -135,55 +135,29 @@
 
 
 
-  .nav-hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    padding: 0.5rem;
-    background: none;
-    border: none;
-    margin-left: auto;
-    z-index: 200;
-  }
-  .nav-hamburger span {
-    display: block;
-    width: 26px;
-    height: 2px;
-    background: #e8d9c0;
-  }
+  
+  
+
+
+  #navToggle { display: none; }
   @media (max-width: 768px) {
-    nav { flex-wrap: wrap !important; padding: 1rem 1.2rem !important; }
-    .nav-hamburger { display: flex !important; }
-    .nav-links {
-      display: none !important;
-      flex-direction: column !important;
-      width: 100% !important;
-      background: rgba(44,36,22,0.97) !important;
-      margin-top: 0.5rem !important;
-      gap: 0 !important;
-      list-style: none !important;
-      padding: 0 !important;
-    }
-    .nav-links.open { display: flex !important; }
-    .nav-links li a {
-      display: block !important;
-      padding: 0.9rem 1.5rem !important;
-      font-size: 0.9rem !important;
-      border-bottom: 1px solid rgba(255,255,255,0.06) !important;
-    }
-    .book-direct-bar { flex-direction: column !important; gap: 0.7rem !important; padding: 0.8rem 1rem !important; }
+    nav { flex-wrap: wrap !important; padding: 1rem 1.2rem !important; position: sticky !important; top: 0 !important; z-index: 1000 !important; }
+    #navToggle { display: flex !important; }
+    .nav-links { display: none; flex-direction: column !important; width: 100% !important; background: rgba(44,36,22,0.97) !important; margin-top: 0.5rem !important; gap: 0 !important; list-style: none !important; padding: 0 !important; }
+    .nav-links li a { display: block !important; padding: 0.9rem 1.5rem !important; font-size: 0.9rem !important; border-bottom: 1px solid rgba(255,255,255,0.06) !important; }
+    .book-direct-bar, div[style*="background:linear-gradient(90deg,#6b4c2a"] { flex-direction: column !important; gap: 0.7rem !important; padding: 0.8rem 1rem !important; }
     body { overflow-x: hidden !important; }
     * { box-sizing: border-box !important; }
     div[style*="grid-template-columns:repeat(2"], div[style*="grid-template-columns: repeat(2"],
     div[style*="grid-template-columns:repeat(3"], div[style*="grid-template-columns: repeat(3"],
     div[style*="grid-template-columns:280px"], div[style*="grid-template-columns: 280px"],
     div[style*="grid-template-columns:1fr 1fr"], div[style*="grid-template-columns: 1fr 1fr"],
-    div[style*="grid-template-columns:400px"], div[style*="grid-template-columns: 400px"] {
+    div[style*="grid-template-columns:400px"] {
       display: flex !important; flex-direction: column !important; width: 100% !important;
     }
-    div[style*="grid-template-columns:repeat(4,1fr)"], div[style*="grid-template-columns: repeat(4,1fr)"],
-    .gallery-grid { display: grid !important; grid-template-columns: repeat(2,1fr) !important; }
+    div[style*="grid-template-columns:repeat(4,1fr)"], .gallery-grid {
+      display: grid !important; grid-template-columns: repeat(2,1fr) !important;
+    }
     div[style*="max-width:1100px"], div[style*="max-width:900px"], div[style*="max-width:1200px"],
     div[style*="max-width: 1100px"], div[style*="max-width: 900px"], div[style*="max-width: 1200px"] {
       padding-left: 1rem !important; padding-right: 1rem !important; width: 100% !important;
@@ -203,7 +177,7 @@
 
 <nav>
   <a href="index.html" class="nav-logo">Forest Sea View Villas</a>
-  <button class="nav-hamburger" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  <button onclick="var m=document.querySelector('.nav-links');m.style.display=m.style.display==='flex'?'none':'flex';" style="display:none;flex-direction:column;gap:5px;cursor:pointer;padding:0.5rem;background:none;border:none;margin-left:auto;" id="navToggle" aria-label="Menu"><span style="display:block;width:26px;height:2px;background:#e8d9c0;"></span><span style="display:block;width:26px;height:2px;background:#e8d9c0;"></span><span style="display:block;width:26px;height:2px;background:#e8d9c0;"></span></button>
   <ul class="nav-links">
     <li><a href="index.html" class="active">Home</a></li>
     <li><a href="villas.html">Our Villas</a></li>
@@ -216,11 +190,9 @@
 </nav>
 
 <!-- BOOK DIRECT BAR -->
-<div class="book-direct-bar">
-  <p>Book directly with us &amp; skip the platform fee</p>
-  <a class="book-direct-btn" href="/cdn-cgi/l/email-protection#7d14131f1c0f530d3d101c14115315081714531c1e531411420e081f17181e09403f12121614131a584f4d38130c08140f04584f4d58384f58454d584449584f4d3b120f180e09584f4d2e181c584f4d2b14180a584f4d2b1411111c0e5b1f121904403518111112584f3e584d3c584d3c34584f4d1c10584f4d141309180f180e091819584f4d1413584f4d1f12121614131a584f4d121318584f4d121b584f4d0412080f584f4d0b1411111c0e53584d3c584d3c2d0f181b180f0f1819584f4d0b1411111c584e3c584f4d584d3c3e15181e16501413584f4d191c0918584e3c584f4d584d3c3e15181e1650120809584f4d191c0918584e3c584f4d584d3c3308101f180f584f4d121b584f4d1a08180e090e584e3c584f4d584d3c584d3c29151c1316584f4d041208584f4c">
-    ✉ Book Direct
-  </a>
+<div style="background:linear-gradient(90deg,#6b4c2a 0%,#3a6b5a 50%,#2a7a8a 100%);text-align:center;padding:0.7rem 2rem;display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap;">
+  <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;color:#e8e4d8;margin:0;">Book directly with us &amp; skip the platform fee</p>
+  <a href="mailto:inbar.p@mail.huji.ac.il?subject=Booking%20Enquiry%20%E2%80%94%20Forest%20Sea%20View%20Villas&body=Hello%2C%0A%0APreferred%20villa%3A%20%0ACheck-in%20date%3A%20%0ACheck-out%20date%3A%20%0ANumber%20of%20guests%3A%20%0A%0AThank%20you%21" style="display:inline-block;padding:0.5rem 1.6rem;background:rgba(255,255,255,0.12);border:1px solid rgba(220,200,168,0.5);color:#e8e4d8;font-family:'Jost',sans-serif;font-size:0.78rem;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;">✉ Book Direct</a>
 </div>
 
 
@@ -288,75 +260,6 @@
 
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-function initSlideshows() {
-  document.querySelectorAll('.slideshow-img').forEach(img => {
-    const wrap = img.parentElement;
-    if (wrap.classList.contains('slide-wrap')) return; // already init
-
-    // Get slides from data attr or just use current src
-    const slides = img.dataset.slides ? img.dataset.slides.split(',') : [img.src.split('/').pop()];
-    // Normalise to full relative paths
-    const fullSlides = slides.map(s => s.startsWith('images/') ? s : 'images/' + s);
-    if (fullSlides.length < 1) return;
-
-    let idx = 0;
-
-    // Wrap the img in a slide-wrap div
-    const container = document.createElement('div');
-    container.className = 'slide-wrap';
-    // Copy any inline styles from parent height containers
-    container.style.width = '100%';
-    container.style.height = '100%';
-    img.parentNode.insertBefore(container, img);
-    container.appendChild(img);
-
-    // Create arrows (always, even for 1 image — you'll add more later)
-    const prev = document.createElement('button');
-    prev.className = 'slide-arrow prev';
-    prev.innerHTML = '&#9664;';
-    prev.title = 'Previous';
-
-    const next = document.createElement('button');
-    next.className = 'slide-arrow next';
-    next.innerHTML = '&#9654;';
-    next.title = 'Next';
-
-    container.appendChild(prev);
-    container.appendChild(next);
-
-    function goTo(newIdx) {
-      idx = ((newIdx % fullSlides.length) + fullSlides.length) % fullSlides.length;
-      img.style.opacity = '0';
-      setTimeout(() => {
-        img.src = fullSlides[idx];
-        img.style.opacity = '1';
-      }, 350);
-    }
-
-    prev.addEventListener('click', e => { e.stopPropagation(); goTo(idx - 1); });
-    next.addEventListener('click', e => { e.stopPropagation(); goTo(idx + 1); });
-
-    // Auto-rotate every 15 seconds
-    if (fullSlides.length > 1) {
-      setInterval(() => goTo(idx + 1), 15000);
-    }
-
-    img.style.transition = 'opacity 0.4s ease';
-  });
-}
-document.addEventListener('DOMContentLoaded', initSlideshows)
-<script>
-(function(){
-  var btn = document.getElementById('navToggle');
-  var menu = document.querySelector('.nav-links');
-  if(btn && menu){
-    btn.addEventListener('click', function(){ menu.classList.toggle('open'); });
-    menu.querySelectorAll('a').forEach(function(a){
-      a.addEventListener('click', function(){ menu.classList.remove('open'); });
-    });
-  }
-})();
-</script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 </body>
 </html>

@@ -98,55 +98,29 @@
 
 
 
-  .nav-hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    padding: 0.5rem;
-    background: none;
-    border: none;
-    margin-left: auto;
-    z-index: 200;
-  }
-  .nav-hamburger span {
-    display: block;
-    width: 26px;
-    height: 2px;
-    background: #e8d9c0;
-  }
+  
+  
+
+
+  #navToggle { display: none; }
   @media (max-width: 768px) {
-    nav { flex-wrap: wrap !important; padding: 1rem 1.2rem !important; }
-    .nav-hamburger { display: flex !important; }
-    .nav-links {
-      display: none !important;
-      flex-direction: column !important;
-      width: 100% !important;
-      background: rgba(44,36,22,0.97) !important;
-      margin-top: 0.5rem !important;
-      gap: 0 !important;
-      list-style: none !important;
-      padding: 0 !important;
-    }
-    .nav-links.open { display: flex !important; }
-    .nav-links li a {
-      display: block !important;
-      padding: 0.9rem 1.5rem !important;
-      font-size: 0.9rem !important;
-      border-bottom: 1px solid rgba(255,255,255,0.06) !important;
-    }
-    .book-direct-bar { flex-direction: column !important; gap: 0.7rem !important; padding: 0.8rem 1rem !important; }
+    nav { flex-wrap: wrap !important; padding: 1rem 1.2rem !important; position: sticky !important; top: 0 !important; z-index: 1000 !important; }
+    #navToggle { display: flex !important; }
+    .nav-links { display: none; flex-direction: column !important; width: 100% !important; background: rgba(44,36,22,0.97) !important; margin-top: 0.5rem !important; gap: 0 !important; list-style: none !important; padding: 0 !important; }
+    .nav-links li a { display: block !important; padding: 0.9rem 1.5rem !important; font-size: 0.9rem !important; border-bottom: 1px solid rgba(255,255,255,0.06) !important; }
+    .book-direct-bar, div[style*="background:linear-gradient(90deg,#6b4c2a"] { flex-direction: column !important; gap: 0.7rem !important; padding: 0.8rem 1rem !important; }
     body { overflow-x: hidden !important; }
     * { box-sizing: border-box !important; }
     div[style*="grid-template-columns:repeat(2"], div[style*="grid-template-columns: repeat(2"],
     div[style*="grid-template-columns:repeat(3"], div[style*="grid-template-columns: repeat(3"],
     div[style*="grid-template-columns:280px"], div[style*="grid-template-columns: 280px"],
     div[style*="grid-template-columns:1fr 1fr"], div[style*="grid-template-columns: 1fr 1fr"],
-    div[style*="grid-template-columns:400px"], div[style*="grid-template-columns: 400px"] {
+    div[style*="grid-template-columns:400px"] {
       display: flex !important; flex-direction: column !important; width: 100% !important;
     }
-    div[style*="grid-template-columns:repeat(4,1fr)"], div[style*="grid-template-columns: repeat(4,1fr)"],
-    .gallery-grid { display: grid !important; grid-template-columns: repeat(2,1fr) !important; }
+    div[style*="grid-template-columns:repeat(4,1fr)"], .gallery-grid {
+      display: grid !important; grid-template-columns: repeat(2,1fr) !important;
+    }
     div[style*="max-width:1100px"], div[style*="max-width:900px"], div[style*="max-width:1200px"],
     div[style*="max-width: 1100px"], div[style*="max-width: 900px"], div[style*="max-width: 1200px"] {
       padding-left: 1rem !important; padding-right: 1rem !important; width: 100% !important;
@@ -166,7 +140,7 @@
 
 <nav>
   <a href="index.html" class="nav-logo">Forest Sea View Villas</a>
-  <button class="nav-hamburger" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  <button onclick="var m=document.querySelector('.nav-links');m.style.display=m.style.display==='flex'?'none':'flex';" style="display:none;flex-direction:column;gap:5px;cursor:pointer;padding:0.5rem;background:none;border:none;margin-left:auto;" id="navToggle" aria-label="Menu"><span style="display:block;width:26px;height:2px;background:#e8d9c0;"></span><span style="display:block;width:26px;height:2px;background:#e8d9c0;"></span><span style="display:block;width:26px;height:2px;background:#e8d9c0;"></span></button>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="villas.html">Our Villas</a></li>
@@ -179,11 +153,9 @@
 </nav>
 
 <!-- BOOK DIRECT BAR -->
-<div class="book-direct-bar">
-  <p>Book directly with us &amp; skip the platform fee</p>
-  <a class="book-direct-btn" href="/cdn-cgi/l/email-protection#0b6265696a79257b4b666a626725637e6162256a6825626734787e69616e687f364964646062656c2e393b4e657a7e6279722e393b2e4e392e333b2e323f2e393b4d64796e787f2e393b586e6a2e393b5d626e7c2e393b5d6267676a782d69646f7236436e6767642e39482e3b4a2e3b4a422e393b6a662e393b62657f6e796e787f6e6f2e393b62652e393b6964646062656c2e393b64656e2e393b646d2e393b72647e792e393b7d6267676a78252e3b4a2e3b4a5b796e6d6e79796e6f2e393b7d6267676a2e384a2e393b2e3b4a48636e68602662652e393b6f6a7f6e2e384a2e393b2e3b4a48636e686026647e7f2e393b6f6a7f6e2e384a2e393b2e3b4a457e66696e792e393b646d2e393b6c7e6e787f782e384a2e393b2e3b4a2e3b4a5f636a65602e393b72647e2e393a">
-    ✉ Book Direct
-  </a>
+<div style="background:linear-gradient(90deg,#6b4c2a 0%,#3a6b5a 50%,#2a7a8a 100%);text-align:center;padding:0.7rem 2rem;display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap;">
+  <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;color:#e8e4d8;margin:0;">Book directly with us &amp; skip the platform fee</p>
+  <a href="mailto:inbar.p@mail.huji.ac.il?subject=Booking%20Enquiry%20%E2%80%94%20Forest%20Sea%20View%20Villas&body=Hello%2C%0A%0APreferred%20villa%3A%20%0ACheck-in%20date%3A%20%0ACheck-out%20date%3A%20%0ANumber%20of%20guests%3A%20%0A%0AThank%20you%21" style="display:inline-block;padding:0.5rem 1.6rem;background:rgba(255,255,255,0.12);border:1px solid rgba(220,200,168,0.5);color:#e8e4d8;font-family:'Jost',sans-serif;font-size:0.78rem;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;">✉ Book Direct</a>
 </div>
 
 
@@ -389,36 +361,6 @@
   <img id="lightbox-img" src="" style="max-width:90vw;max-height:90vh;object-fit:contain;">
   <div style="position:absolute;top:1.5rem;right:2rem;color:white;font-size:2rem;cursor:pointer;" onclick="closeLightbox()">×</div>
 </div>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-function openLightbox(src) {
-  document.getElementById('lightbox').style.display = 'flex';
-  document.getElementById('lightbox-img').src = src;
-}
-function closeLightbox() {
-  document.getElementById('lightbox').style.display = 'none';
-}
-</script>
-
-
-<footer>
-  <div class="footer-logo">Forest Sea View Villas</div>
-  <div class="footer-tagline">Two forest houses above the Aegean · Ano Kariotes, Samothraki</div>
-  <div class="footer-bottom">
-    <span>© 2025 Forest Sea View Villas. All rights reserved.</span>
-    <span>Ano Kariotes · Samothraki · Greece</span>
-  </div>
-</foo
-<script>
-(function(){
-  var btn = document.getElementById('navToggle');
-  var menu = document.querySelector('.nav-links');
-  if(btn && menu){
-    btn.addEventListener('click', function(){ menu.classList.toggle('open'); });
-    menu.querySelectorAll('a').forEach(function(a){
-      a.addEventListener('click', function(){ menu.classList.remove('open'); });
-    });
-  }
-})();
-</script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 </body>
 </html>
