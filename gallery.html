@@ -136,6 +136,69 @@
 
   #lightbox.open { display:flex !important; }
 
+
+  /* ── Arrow pulse on load ── */
+  @keyframes arrowPulse {
+    0%   { opacity:0.15; transform:scale(1); }
+    50%  { opacity:0.9;  transform:scale(1.3); }
+    100% { opacity:0.15; transform:scale(1); }
+  }
+  .slide-arrow.pulse { animation: arrowPulse 0.7s ease-in-out 2; }
+
+  /* ── Magnifier overlay on image containers ── */
+  .slide-wrap { position:relative; overflow:hidden; }
+  .slide-wrap::after {
+    content: '⊕';
+    position: absolute;
+    bottom: 0.6rem;
+    right: 0.6rem;
+    font-size: 1.3rem;
+    color: rgba(255,255,255,0.9);
+    background: rgba(0,0,0,0.35);
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    line-height: 2rem;
+    text-align: center;
+  }
+  .slide-wrap:hover::after { opacity: 1; }
+
+  /* ── Gallery grid magnifier ── */
+  .gallery-grid div { position: relative; }
+  .gallery-grid div::after {
+    content: '⊕';
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    font-size: 1.2rem;
+    color: rgba(255,255,255,0.95);
+    background: rgba(0,0,0,0.35);
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    line-height: 1.8rem;
+    text-align: center;
+  }
+  .gallery-grid div:hover::after { opacity: 1; }
+
+  /* Mobile: always show magnifier icon slightly */
+  @media (max-width: 768px) {
+    .slide-wrap::after,
+    .gallery-grid div::after { opacity: 0.6; }
+  }
+
 </style>
 </head>
 <body>
@@ -504,6 +567,19 @@ if(gImgs.length){
     img.onclick = function(){ LB.open(gSrcs, i); };
   });
 }
+
+// ── Pulse arrows once on page load ──
+window.addEventListener('load', function(){
+  setTimeout(function(){
+    document.querySelectorAll('.slide-arrow').forEach(function(arrow){
+      arrow.classList.add('pulse');
+      arrow.addEventListener('animationend', function(){
+        arrow.classList.remove('pulse');
+      }, { once: true });
+    });
+  }, 800);
+});
+
 </script>
 </body>
 </html>
