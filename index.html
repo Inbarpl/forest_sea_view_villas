@@ -170,6 +170,9 @@
     }
   }
 
+
+  #lightbox.open { display:flex !important; }
+
 </style>
 </head>
 <body>
@@ -249,6 +252,14 @@
 </section>
 
 
+<!-- Lightbox -->
+<div id="lightbox" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:9999;align-items:center;justify-content:center;">
+  <span id="lightbox-close" style="position:fixed;top:1rem;right:1.5rem;color:#fff;font-size:2.5rem;cursor:pointer;line-height:1;z-index:10000;">&times;</span>
+  <span id="lightbox-prev" style="position:fixed;left:0.5rem;top:50%;transform:translateY(-50%);color:#fff;font-size:3rem;cursor:pointer;padding:1rem;opacity:0.8;z-index:10000;">&#8249;</span>
+  <img id="lightbox-img" src="" alt="" style="max-width:92vw;max-height:90vh;object-fit:contain;">
+  <span id="lightbox-next" style="position:fixed;right:0.5rem;top:50%;transform:translateY(-50%);color:#fff;font-size:3rem;cursor:pointer;padding:1rem;opacity:0.8;z-index:10000;">&#8250;</span>
+</div>
+
 <footer>
   <div class="footer-logo">Forest Sea View Villas</div>
   <div class="footer-tagline">Two forest houses above the Aegean · Ano Kariotes, Samothraki</div>
@@ -261,5 +272,74 @@
 </div>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script>
+// ── Slideshow ──────────────────────────────────────────────
+document.querySelectorAll('.slideshow-img').forEach(function(img) {
+  var slides = img.dataset.slides ? img.dataset.slides.split(',') : [];
+  if (slides.length < 2) return;
+  var idx = 0;
+  var wrap = img.parentElement;
+  var prev = wrap.querySelector('.slide-arrow.prev');
+  var next = wrap.querySelector('.slide-arrow.next');
+  function goTo(n) {
+    idx = ((n % slides.length) + slides.length) % slides.length;
+    img.style.opacity = '0';
+    setTimeout(function(){ img.src = slides[idx]; img.style.opacity = '1'; }, 300);
+  }
+  img.style.transition = 'opacity 0.3s ease';
+  if (prev) prev.addEventListener('click', function(e){ e.stopPropagation(); goTo(idx-1); });
+  if (next) next.addEventListener('click', function(e){ e.stopPropagation(); goTo(idx+1); });
+  setInterval(function(){ goTo(idx+1); }, 15000);
+  // Click image to open lightbox
+  img.style.cursor = 'pointer';
+  img.addEventListener('click', function(){ openLightbox(img.src, slides, idx); });
+});
+
+// ── Lightbox ──────────────────────────────────────────────
+var lb = document.getElementById('lightbox');
+var lbImg = document.getElementById('lightbox-img');
+var lbSlides = [];
+var lbIdx = 0;
+
+function openLightbox(src, slides, startIdx) {
+  if (!lb) return;
+  lbSlides = slides || [src];
+  lbIdx = startIdx || 0;
+  lbImg.src = lbSlides[lbIdx];
+  lb.classList.add('open');
+}
+
+function lbNext() {
+  lbIdx = (lbIdx + 1) % lbSlides.length;
+  lbImg.src = lbSlides[lbIdx];
+}
+function lbPrev() {
+  lbIdx = (lbIdx - 1 + lbSlides.length) % lbSlides.length;
+  lbImg.src = lbSlides[lbIdx];
+}
+
+if (lb) {
+  document.getElementById('lightbox-close').addEventListener('click', function(){ lb.classList.remove('open'); });
+  document.getElementById('lightbox-next').addEventListener('click', lbNext);
+  document.getElementById('lightbox-prev').addEventListener('click', lbPrev);
+  lb.addEventListener('click', function(e){ if(e.target===lb) lb.classList.remove('open'); });
+  document.addEventListener('keydown', function(e){
+    if (!lb.classList.contains('open')) return;
+    if (e.key==='ArrowRight') lbNext();
+    if (e.key==='ArrowLeft') lbPrev();
+    if (e.key==='Escape') lb.classList.remove('open');
+  });
+}
+
+// ── Gallery grid lightbox ──────────────────────────────────
+var galleryImgs = document.querySelectorAll('.gallery-grid img');
+if (galleryImgs.length) {
+  var galSrcs = Array.from(galleryImgs).map(function(i){ return i.src; });
+  galleryImgs.forEach(function(img, i){
+    img.style.cursor = 'pointer';
+    img.addEventListener('click', function(){ openLightbox(img.src, galSrcs, i); });
+  });
+}
+</script>
 </body>
 </html>
