@@ -274,9 +274,11 @@
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;max-width:1100px;margin:0 auto;">
 
     <div style="background:var(--cream);overflow:hidden;box-shadow:0 4px 30px rgba(44,36,22,0.08);">
-      <div style="height:320px;overflow:hidden;">
-        <img loading="lazy" src="images/Micro_openspace.jpeg" data-slides="images/Micro_openspace.jpeg,images/mikro_ancient_rocks.jpg,images/mikro_view.jpg,images/Micro_livingroom.jpeg,images/Micro_livingroom1.jpeg,images/Micro_livingroom3.jpeg,images/Micro_livingroom4.jpeg,images/Micro_Kitchen.jpeg,images/Micro_openspace.jpeg,images/Micro_openspace2.jpeg,images/Micro_openspace3.jpeg,images/Micro_openspace4.jpeg,images/Micro_openspace5.jpeg,images/Micro_bedroom1.jpeg,images/Micro_bedroom2.jpeg,images/Micro_bedroom3.jpeg,images/Micro_bedroom4.jpeg,images/Micro_bedroom5.jpeg,images/Micro_bedroom6.jpeg,images/Micro_bathroom.jpeg" class="slideshow-img" alt="The Sea Villa" style="width:100%;height:100%;object-fit:cover;display:block;transition:opacity 0.4s ease;">
-      </div>
+      <div style="height:320px;overflow:hidden;position:relative;" class="slide-wrap">
+      <img loading="lazy" src="images/Micro_openspace.jpeg" data-slides="images/Micro_openspace.jpeg,images/mikro_ancient_rocks.jpg,images/mikro_view.jpg,images/Micro_livingroom.jpeg,images/Micro_livingroom1.jpeg,images/Micro_livingroom3.jpeg,images/Micro_livingroom4.jpeg,images/Micro_Kitchen.jpeg,images/Micro_openspace.jpeg,images/Micro_openspace2.jpeg,images/Micro_openspace3.jpeg,images/Micro_openspace4.jpeg,images/Micro_openspace5.jpeg,images/Micro_bedroom1.jpeg,images/Micro_bedroom2.jpeg,images/Micro_bedroom3.jpeg,images/Micro_bedroom4.jpeg,images/Micro_bedroom5.jpeg,images/Micro_bedroom6.jpeg,images/Micro_bathroom.jpeg" class="slideshow-img" alt="The Sea Villa" style="width:100%;height:100%;object-fit:cover;display:block;transition:opacity 0.4s ease;cursor:pointer;">
+      <button onclick="slidePrev(this)" style="position:absolute;left:0;top:50%;transform:translateY(-50%);background:rgba(44,36,22,0.25);color:rgba(245,240,232,0.85);border:none;cursor:pointer;z-index:10;width:28px;height:42px;font-size:1rem;display:flex;align-items:center;justify-content:center;" class="slide-arrow prev">&#8249;</button>
+      <button onclick="slideNext(this)" style="position:absolute;right:0;top:50%;transform:translateY(-50%);background:rgba(44,36,22,0.25);color:rgba(245,240,232,0.85);border:none;cursor:pointer;z-index:10;width:28px;height:42px;font-size:1rem;display:flex;align-items:center;justify-content:center;" class="slide-arrow next">&#8250;</button>
+    </div>
       <div style="padding:2.5rem;">
         <div style="font-size:0.75rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--moss);margin-bottom:0.5rem;">Couple's Retreat · Most Romantic</div>
         <h3 style="font-family:'Yeseva One', serif;font-size:2rem;color:var(--bark);margin-bottom:0.4rem;">The Sea Villa</h3>
@@ -293,9 +295,11 @@
     </div>
 
     <div style="background:var(--cream);overflow:hidden;box-shadow:0 4px 30px rgba(44,36,22,0.08);">
-      <div style="height:320px;overflow:hidden;">
-        <img loading="lazy" src="images/Megalo2.jpeg" data-slides="images/Megalo2.jpeg,images/megalo_yoga.jpg,images/Megalo.jpeg,images/Megalo3.jpeg,images/Megalo4.jpeg,images/Megalo_winter.jpeg,images/Megalo_Kitchen.jpeg,images/Megalo_Kitchen2.jpeg,images/Megalo_Kitchen3.jpeg,images/Megalo_suit.jpeg,images/Megalo_suit_2.jpeg,images/Megalo_suit1.jpeg,images/megalo_room1.jpeg,images/Megalo_suit_bathroom.jpeg,images/Megalo_Bathroom.jpeg,images/Megalo_Bathroom1.jpeg" class="slideshow-img" alt="The Forest Villa" style="width:100%;height:100%;object-fit:cover;display:block;transition:opacity 0.4s ease;">
-      </div>
+      <div style="height:320px;overflow:hidden;position:relative;" class="slide-wrap">
+      <img loading="lazy" src="images/Megalo2.jpeg" data-slides="images/Megalo2.jpeg,images/megalo_yoga.jpg,images/Megalo.jpeg,images/Megalo3.jpeg,images/Megalo4.jpeg,images/Megalo_winter.jpeg,images/Megalo_Kitchen.jpeg,images/Megalo_Kitchen2.jpeg,images/Megalo_Kitchen3.jpeg,images/Megalo_suit.jpeg,images/Megalo_suit_2.jpeg,images/Megalo_suit1.jpeg,images/megalo_room1.jpeg,images/Megalo_suit_bathroom.jpeg,images/Megalo_Bathroom.jpeg,images/Megalo_Bathroom1.jpeg" class="slideshow-img" alt="The Forest Villa" style="width:100%;height:100%;object-fit:cover;display:block;transition:opacity 0.4s ease;cursor:pointer;">
+      <button onclick="slidePrev(this)" style="position:absolute;left:0;top:50%;transform:translateY(-50%);background:rgba(44,36,22,0.25);color:rgba(245,240,232,0.85);border:none;cursor:pointer;z-index:10;width:28px;height:42px;font-size:1rem;display:flex;align-items:center;justify-content:center;" class="slide-arrow prev">&#8249;</button>
+      <button onclick="slideNext(this)" style="position:absolute;right:0;top:50%;transform:translateY(-50%);background:rgba(44,36,22,0.25);color:rgba(245,240,232,0.85);border:none;cursor:pointer;z-index:10;width:28px;height:42px;font-size:1rem;display:flex;align-items:center;justify-content:center;" class="slide-arrow next">&#8250;</button>
+    </div>
       <div style="padding:2.5rem;">
         <div style="font-size:0.75rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--moss);margin-bottom:0.5rem;">Families &amp; Groups</div>
         <h3 style="font-family:'Yeseva One', serif;font-size:2rem;color:var(--bark);margin-bottom:0.4rem;">The Forest Villa</h3>
@@ -336,164 +340,79 @@
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 <script>
-// ── Slideshow ──────────────────────────────────────────────
-document.querySelectorAll('.slideshow-img').forEach(function(img) {
-  var slides = img.dataset.slides ? img.dataset.slides.split(',') : [];
-  if (slides.length < 2) return;
-  var idx = 0;
-  var wrap = img.parentElement;
-  var prev = wrap.querySelector('.slide-arrow.prev');
-  var next = wrap.querySelector('.slide-arrow.next');
-  function goTo(n) {
-    idx = ((n % slides.length) + slides.length) % slides.length;
-    img.style.opacity = '0';
-    setTimeout(function(){ img.src = slides[idx]; img.style.opacity = '1'; }, 300);
-  }
-  img.style.transition = 'opacity 0.3s ease';
-  if (prev) prev.addEventListener('click', function(e){ e.stopPropagation(); goTo(idx-1); });
-  if (next) next.addEventListener('click', function(e){ e.stopPropagation(); goTo(idx+1); });
-  setInterval(function(){ goTo(idx+1); }, 15000);
-  // Click image to open lightbox
-  img.style.cursor = 'pointer';
-  img.addEventListener('click', function(){ openLightbox(img.src, slides, idx); });
-});
-
-// ── Lightbox ──────────────────────────────────────────────
-var lb = document.getElementById('lightbox');
-var lbImg = document.getElementById('lightbox-img');
-var lbSlides = [];
-var lbIdx = 0;
-
-function openLightbox(src, slides, startIdx) {
-  if (!lb) return;
-  lbSlides = slides || [src];
-  lbIdx = startIdx || 0;
-  lbImg.src = lbSlides[lbIdx];
-  lb.classList.add('open');
-}
-
-function lbNext() {
-  lbIdx = (lbIdx + 1) % lbSlides.length;
-  lbImg.src = lbSlides[lbIdx];
-}
-function lbPrev() {
-  lbIdx = (lbIdx - 1 + lbSlides.length) % lbSlides.length;
-  lbImg.src = lbSlides[lbIdx];
-}
-
-if (lb) {
-  document.getElementById('lightbox-close').addEventListener('click', function(){ lb.classList.remove('open'); });
-  document.getElementById('lightbox-next').addEventListener('click', lbNext);
-  document.getElementById('lightbox-prev').addEventListener('click', lbPrev);
-  lb.addEventListener('click', function(e){ if(e.target===lb) lb.classList.remove('open'); });
-  document.addEventListener('keydown', function(e){
-    if (!lb.classList.contains('open')) return;
-    if (e.key==='ArrowRight') lbNext();
-    if (e.key==='ArrowLeft') lbPrev();
-    if (e.key==='Escape') lb.classList.remove('open');
+// SLIDESHOW + LIGHTBOX
+var _ss={};
+function _initSlideshows(){
+  document.querySelectorAll('.slide-wrap').forEach(function(wrap,i){
+    var img=wrap.querySelector('.slideshow-img');
+    if(!img)return;
+    var slides=img.dataset.slides?img.dataset.slides.split(','):[img.src];
+    var id='ss'+i; wrap.id=id;
+    _ss[id]={slides:slides,idx:0,img:img};
+    img.onclick=function(){lbOpen(slides,_ss[id].idx);};
+    if(slides.length>1){
+      setInterval(function(){
+        var s=_ss[id]; s.idx=(s.idx+1)%s.slides.length;
+        s.img.style.opacity='0';
+        setTimeout(function(){s.img.src=s.slides[s.idx];s.img.style.opacity='1';},350);
+      },15000);
+    }
   });
 }
-
-// ── Gallery grid lightbox ──────────────────────────────────
-var galleryImgs = document.querySelectorAll('.gallery-grid img');
-if (galleryImgs.length) {
-  var galSrcs = Array.from(galleryImgs).map(function(i){ return i.src; });
-  galleryImgs.forEach(function(img, i){
-    img.style.cursor = 'pointer';
-    img.addEventListener('click', function(){ openLightbox(img.src, galSrcs, i); });
-  });
+function slidePrev(btn){
+  var wrap=btn.closest('.slide-wrap'),id=wrap.id,s=_ss[id];
+  if(!s)return;
+  s.idx=(s.idx-1+s.slides.length)%s.slides.length;
+  s.img.style.opacity='0';
+  setTimeout(function(){s.img.src=s.slides[s.idx];s.img.style.opacity='1';},350);
 }
-</script>
-<script>
-// ═══════════════════════════════════════════
-// SLIDESHOW + LIGHTBOX — self contained
-// ═══════════════════════════════════════════
+function slideNext(btn){
+  var wrap=btn.closest('.slide-wrap'),id=wrap.id,s=_ss[id];
+  if(!s)return;
+  s.idx=(s.idx+1)%s.slides.length;
+  s.img.style.opacity='0';
+  setTimeout(function(){s.img.src=s.slides[s.idx];s.img.style.opacity='1';},350);
+}
+_initSlideshows();
 
-// --- Lightbox setup ---
-var LB = (function(){
-  var el, img, idx, srcs;
-  function create(){
-    el = document.createElement('div');
-    el.id = 'lb';
-    el.style.cssText = 'display:none;position:fixed;inset:0;background:rgba(0,0,0,0.93);z-index:99999;align-items:center;justify-content:center;';
-    el.innerHTML = '<span id="lb-c" style="position:fixed;top:1rem;right:1.5rem;color:#fff;font-size:2.8rem;cursor:pointer;z-index:100000;line-height:1;">&times;</span>'
-      + '<span id="lb-p" style="position:fixed;left:0;top:50%;transform:translateY(-50%);color:#fff;font-size:4rem;cursor:pointer;padding:1rem;z-index:100000;">&#8249;</span>'
-      + '<img id="lb-i" src="" style="max-width:92vw;max-height:90vh;object-fit:contain;" />'
-      + '<span id="lb-n" style="position:fixed;right:0;top:50%;transform:translateY(-50%);color:#fff;font-size:4rem;cursor:pointer;padding:1rem;z-index:100000;">&#8250;</span>';
-    document.body.appendChild(el);
-    img = document.getElementById('lb-i');
-    document.getElementById('lb-c').onclick = close;
-    document.getElementById('lb-p').onclick = function(){ show(idx-1); };
-    document.getElementById('lb-n').onclick = function(){ show(idx+1); };
-    el.onclick = function(e){ if(e.target===el) close(); };
-    document.addEventListener('keydown', function(e){
-      if(el.style.display==='flex'){
-        if(e.key==='ArrowRight') show(idx+1);
-        if(e.key==='ArrowLeft') show(idx-1);
-        if(e.key==='Escape') close();
-      }
-    });
-  }
-  function show(i){
-    if(!el) create();
-    idx = ((i % srcs.length) + srcs.length) % srcs.length;
-    img.src = srcs[idx];
-    el.style.display = 'flex';
-  }
-  function close(){ if(el) el.style.display='none'; }
-  function open(s, i){ srcs=s; show(i||0); }
-  return { open: open };
-})();
-
-// --- Slideshow ---
-document.querySelectorAll('.slideshow-img').forEach(function(img){
-  var slides = img.dataset.slides ? img.dataset.slides.split(',') : [img.src];
-  var idx = 0;
-  img.style.cssText += 'transition:opacity 0.4s ease;cursor:pointer;';
-
-  // Arrow buttons
-  var wrap = img.parentElement;
-  var prev = wrap.querySelector('.slide-arrow.prev, .slide-arrow:first-of-type');
-  var next = wrap.querySelector('.slide-arrow.next, .slide-arrow:last-of-type');
-
-  function goTo(n){
-    idx = ((n % slides.length) + slides.length) % slides.length;
-    img.style.opacity='0';
-    setTimeout(function(){ img.src=slides[idx]; img.style.opacity='1'; }, 350);
-  }
-
-  if(prev) prev.onclick = function(e){ e.stopPropagation(); goTo(idx-1); };
-  if(next) next.onclick = function(e){ e.stopPropagation(); goTo(idx+1); };
-
-  // Click to open lightbox
-  img.onclick = function(){ LB.open(slides, idx); };
-
-  // Auto-rotate
-  if(slides.length > 1) setInterval(function(){ goTo(idx+1); }, 15000);
+// Lightbox
+var _lbSrcs=[],_lbIdx=0,_lbd=null;
+function _getLBD(){
+  if(_lbd)return _lbd;
+  _lbd=document.createElement('div');
+  _lbd.style.cssText='display:none;position:fixed;inset:0;background:rgba(0,0,0,0.93);z-index:99999;align-items:center;justify-content:center;';
+  _lbd.innerHTML='<span onclick="lbClose()" style="position:fixed;top:1rem;right:1.5rem;color:#fff;font-size:2.8rem;cursor:pointer;z-index:100000;line-height:1;">&times;</span>'
+    +'<span onclick="lbPrev()" style="position:fixed;left:0;top:50%;transform:translateY(-50%);color:#fff;font-size:4rem;cursor:pointer;padding:1rem;z-index:100000;user-select:none;">&#8249;</span>'
+    +'<img id="_lbi" src="" style="max-width:92vw;max-height:90vh;object-fit:contain;"/>'
+    +'<span onclick="lbNext()" style="position:fixed;right:0;top:50%;transform:translateY(-50%);color:#fff;font-size:4rem;cursor:pointer;padding:1rem;z-index:100000;user-select:none;">&#8250;</span>';
+  _lbd.onclick=function(e){if(e.target===_lbd)lbClose();};
+  document.body.appendChild(_lbd);
+  return _lbd;
+}
+function lbOpen(srcs,idx){_lbSrcs=srcs;_lbIdx=idx||0;_getLBD().style.display='flex';document.getElementById('_lbi').src=_lbSrcs[_lbIdx];}
+function lbClose(){if(_lbd)_lbd.style.display='none';}
+function lbNext(){_lbIdx=(_lbIdx+1)%_lbSrcs.length;document.getElementById('_lbi').src=_lbSrcs[_lbIdx];}
+function lbPrev(){_lbIdx=(_lbIdx-1+_lbSrcs.length)%_lbSrcs.length;document.getElementById('_lbi').src=_lbSrcs[_lbIdx];}
+document.addEventListener('keydown',function(e){
+  if(!_lbd||_lbd.style.display!=='flex')return;
+  if(e.key==='ArrowRight')lbNext();
+  if(e.key==='ArrowLeft')lbPrev();
+  if(e.key==='Escape')lbClose();
 });
 
-// --- Gallery grid ---
-var gImgs = document.querySelectorAll('.gallery-grid img');
-if(gImgs.length){
-  var gSrcs = Array.from(gImgs).map(function(i){ return i.src; });
-  gImgs.forEach(function(img, i){
-    img.style.cursor='pointer';
-    img.onclick = function(){ LB.open(gSrcs, i); };
-  });
-}
-
-// ── Pulse arrows once on page load ──
-window.addEventListener('load', function(){
-  setTimeout(function(){
-    document.querySelectorAll('.slide-arrow').forEach(function(arrow){
-      arrow.classList.add('pulse');
-      arrow.addEventListener('animationend', function(){
-        arrow.classList.remove('pulse');
-      }, { once: true });
-    });
-  }, 800);
+// Gallery grid
+document.querySelectorAll('.gallery-grid img').forEach(function(img,i){
+  var all=Array.from(document.querySelectorAll('.gallery-grid img')).map(function(x){return x.src;});
+  img.style.cursor='pointer';
+  img.onclick=function(){lbOpen(all,i);};
 });
 
+// Arrow pulse
+setTimeout(function(){
+  document.querySelectorAll('.slide-arrow').forEach(function(a){
+    a.style.opacity='1'; setTimeout(function(){a.style.opacity='';},600);
+  });
+},800);
 </script>
 </body>
 </html>
