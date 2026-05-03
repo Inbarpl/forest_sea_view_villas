@@ -242,13 +242,12 @@
     <h2 style="font-family:'Yeseva One', serif;font-size:clamp(1.8rem,3vw,2.5rem);color:var(--bark);margin-bottom:0.8rem;">Plan Your Escape</h2>
     <p style="font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--earth);margin-bottom:2.5rem;">Send us your dates and we'll get back to you within 24 hours to confirm availability.</p>
 
-    <form id="bookingForm" action="https://formsubmit.co/389513b6798692cb6b67408451c055dd" method="POST" style="display:flex;flex-direction:column;gap:1.2rem;">
-      <input type="hidden" name="_replyto" value="">
-      <input type="hidden" name="_subject" value="New Booking Enquiry — Forest Sea View Villas">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_autoresponse" value="Thank you for your enquiry! We will be in touch within 24 hours. Forest Sea View Villas">
-      <input type="hidden" name="_next" value="https://inbarpl.github.io/forest_sea_view_villas/thanks.html">
+    <form id="bookingForm" action="https://api.web3forms.com/submit" method="POST" style="display:flex;flex-direction:column;gap:1.2rem;">
+      <input type="hidden" name="access_key" value="629214a8-a2f1-4b99-b9b3-aed18170243b">
+      <input type="hidden" name="subject" value="New Booking Enquiry — Forest Sea View Villas">
+      <input type="hidden" name="from_name" value="Forest Sea View Villas Website">
+      <input type="hidden" name="redirect" value="https://inbarpl.github.io/forest_sea_view_villas/thanks.html">
+      <input type="hidden" name="botcheck" value="">
       <div class="dates-row" style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
         <div style="display:flex;flex-direction:column;gap:0.4rem;">
           <label style="font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--earth);">First Name</label>
