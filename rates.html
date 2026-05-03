@@ -1,14 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18037913392"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'AW-18037913392');
-</script>
 <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -284,6 +276,55 @@
 
   <div style="background:var(--cream);padding:2.5rem;max-width:800px;margin:0 auto;border-left:3px solid #4a7a52;">
     <h3 style="font-family:'Yeseva One', serif;font-size:1.2rem;color:var(--bark);margin-bottom:1rem;">What's included</h3>
+    
+<!-- ── Booking & Cancellation Policy ── -->
+<div style="text-align:center;margin:1.5rem 0;">
+  <a href="#" onclick="document.getElementById('policyModal').style.display='flex';return false;"
+     style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.9rem;color:#8b7355;text-decoration:none;letter-spacing:0.05em;border-bottom:1px dotted #8b7355;padding-bottom:1px;">
+    📋 Our booking &amp; cancellation policy
+  </a>
+</div>
+
+<!-- Policy Modal -->
+<div id="policyModal"
+     style="display:none;position:fixed;inset:0;background:rgba(44,36,22,0.55);z-index:9999;align-items:center;justify-content:center;padding:1.5rem;"
+     onclick="if(event.target===this)this.style.display='none'">
+  <div style="background:#f5f0e8;border:1px solid #c8b896;max-width:480px;width:100%;padding:2.5rem 2rem;position:relative;box-shadow:0 8px 40px rgba(44,36,22,0.18);">
+    <!-- Close button -->
+    <button onclick="document.getElementById('policyModal').style.display='none'"
+            style="position:absolute;top:1rem;right:1.2rem;background:none;border:none;font-size:1.3rem;color:#8b7355;cursor:pointer;line-height:1;">✕</button>
+    <!-- Title -->
+    <div style="font-family:'Jost',sans-serif;font-size:0.72rem;letter-spacing:0.28em;text-transform:uppercase;color:#8b7355;margin-bottom:0.6rem;">Forest Sea View Villas</div>
+    <h3 style="font-family:'Yeseva One',serif;font-size:1.3rem;color:#3d2f1e;margin:0 0 1.5rem;font-weight:normal;">Booking &amp; Cancellation Policy</h3>
+    <!-- Payment -->
+    <p style="font-family:'Jost',sans-serif;font-size:0.78rem;letter-spacing:0.18em;text-transform:uppercase;color:#8b7355;margin:0 0 0.4rem;">Payment</p>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:1rem;color:#5c4a32;line-height:1.7;margin:0 0 1.4rem;">A 30% deposit is required to confirm your reservation. The remaining balance will be charged 7 days prior to your arrival date.</p>
+    <!-- Cancellation -->
+    <p style="font-family:'Jost',sans-serif;font-size:0.78rem;letter-spacing:0.18em;text-transform:uppercase;color:#8b7355;margin:0 0 0.4rem;">Cancellation</p>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:0.95rem;color:#5c4a32;line-height:1.7;margin:0 0 0.5rem;">We understand that plans can change, and we aim to be as flexible as possible.</p>
+    <div style="border-left:2px solid #c8b896;padding-left:1rem;margin-bottom:1.5rem;">
+      <p style="font-family:'Cormorant Garamond',serif;font-size:0.97rem;color:#5c4a32;line-height:1.7;margin:0 0 0.5rem;">
+        <span style="color:#2a8a96;font-weight:500;">More than 30 days before check-in</span><br>
+        Full refund of your deposit, no questions asked.
+      </p>
+      <p style="font-family:'Cormorant Garamond',serif;font-size:0.97rem;color:#5c4a32;line-height:1.7;margin:0 0 0.5rem;">
+        <span style="color:#8b7355;font-weight:500;">8 to 29 days before check-in</span><br>
+        50% of your deposit will be refunded.
+      </p>
+      <p style="font-family:'Cormorant Garamond',serif;font-size:0.97rem;color:#5c4a32;line-height:1.7;margin:0;">
+        <span style="color:#8b6a50;font-weight:500;">Less than 8 days before check-in</span><br>
+        Unfortunately we are unable to offer a refund at this stage, as the villa will have been held exclusively for you.
+      </p>
+    </div>
+    <!-- Close -->
+    <div style="text-align:center;">
+      <button onclick="document.getElementById('policyModal').style.display='none'"
+              style="font-family:'Jost',sans-serif;font-size:0.78rem;letter-spacing:0.2em;text-transform:uppercase;color:#f5f0e8;background:#5c4a32;border:none;padding:0.7rem 2rem;cursor:pointer;">
+        Close
+      </button>
+    </div>
+  </div>
+</div>
     <p style="font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--earth);line-height:1.75;">All stays include fresh linen and towels, Starlink WiFi, fully equipped modern kitchen, air conditioning, and our personal guide to the island — including our favourite trails, beaches, tavernas and hidden spots that don't appear in any guidebook.</p>
   </div>
 </div>
