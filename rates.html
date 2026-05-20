@@ -339,6 +339,53 @@
 </div>
 
 
+<!-- ── BEDS24 BOOKING CALENDAR ── -->
+<div style="padding:5rem 6vw;background:var(--cream);">
+  <div class="section-header">
+    <span class="section-label">Availability</span>
+    <h2>Check Availability &amp; Book</h2>
+    <div class="divider"></div>
+    <p>Select your dates below to check availability and book directly with us.</p>
+  </div>
+  <div style="max-width:960px;margin:0 auto;overflow:hidden;">
+    <style>
+      .beds24-wrap {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        -webkit-overflow-scrolling: touch;
+      }
+      .beds24-wrap iframe {
+        width: 100%;
+        border: none;
+        display: block;
+      }
+      @media (max-width: 768px) {
+        .beds24-wrap {
+          overflow-x: auto;
+        }
+        .beds24-wrap iframe {
+          min-width: 320px;
+        }
+      }
+    </style>
+    <div class="beds24-wrap">
+      <iframe
+        src="https://beds24.com/booking2.php?propid=325490&amp;hideheader=yes&amp;hidefooter=yes&amp;referer=website&amp;width=2000"
+        style="width:100%;min-height:2000px;border:none;display:block;"
+        scrolling="auto"
+        title="Forest &amp; Sea View Villas — Availability Calendar"
+        onload="
+          try {
+            var h = this.contentWindow.document.body.scrollHeight;
+            if (h > 400) this.style.minHeight = h + 'px';
+          } catch(e) {}
+        ">
+      </iframe>
+    </div>
+  </div>
+</div>
+
 <footer>
   <div class="footer-logo">Forest Sea View Villas</div>
   <div class="footer-tagline">Two forest houses above the Aegean · Ano Kariotes, Samothraki</div>
